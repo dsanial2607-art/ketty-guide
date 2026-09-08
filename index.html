@@ -1,5 +1,5 @@
 <!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ketty vous guide</title><link rel="stylesheet" href="style.css"></head>
-<body><header><div class="brand">Ketty<br><span>vous guide !</span></div><div class="instruction">☝️ <b>Touchez une carte</b><small>POUR EN SAVOIR PLUS</small></div></header>
-<main><aside><div class="robot">🤖</div><div class="bubble">Explorez<br>nos pépites<br>locales ! ♡</div></aside><section id="cards" class="cards"></section></main>
-<div id="modal" class="modal hidden"><div class="box"><button id="close" class="close">×</button><div id="modalIcon" class="mi"></div><h2 id="modalTitle"></h2><p>Écoutez Ketty, puis continuez pour récupérer votre itinéraire.</p><div class="actions"><button id="replay">🔊 Réécouter Ketty</button><button id="go">C'est parti ! →</button></div></div></div>
+<body><header><div class="brand" id="uiTitle"></div><div class="instruction">☝️ <b id="uiInstruction"></b><small id="uiSubInstruction"></small></div></header>
+<main><aside><div class="robot">🤖</div><div class="bubble" id="uiBubble"></div></aside><section id="cards" class="cards"></section></main>
+<div id="modal" class="modal hidden"><div class="box"><button id="close" class="close">×</button><div id="modalIcon" class="mi"></div><h2 id="modalTitle"></h2><p id="uiModalMessage"></p><div class="actions"><button id="replay"></button><button id="go"></button></div></div></div>
 <script src="app.js"></script></body></html>

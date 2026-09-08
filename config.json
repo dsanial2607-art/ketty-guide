@@ -57,5 +57,14 @@
     "Si votre mémoire est déjà partie en vacances, pas de panique !",
     "Je peux vous permettre de retrouver facilement l'itinéraire sur votre téléphone."
   ],
-  "phrase_tally_finale": "Renseignez votre adresse mail sur ma tablette, et je vous prépare le QR code."
+  "phrase_tally_finale": "Renseignez votre adresse mail sur ma tablette, et je vous prépare le QR code.",
+  "interface": {
+    "titre": "Ketty vous guide !",
+    "instruction": "Touchez une carte",
+    "sous_instruction": "POUR EN SAVOIR PLUS",
+    "bulle": "Explorez nos pépites locales !",
+    "message_modal": "Écoutez Ketty, puis continuez pour récupérer votre itinéraire.",
+    "bouton_reecouter": "🔊 Réécouter Ketty",
+    "bouton_continuer": "C'est parti ! →"
+  }
 }

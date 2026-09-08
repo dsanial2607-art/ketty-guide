@@ -1,5 +1,14 @@
 let CFG={},current=null,voiceSettings={rate:1,pitch:1};const $=s=>document.querySelector(s);
 function speak(t,done){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='fr-FR';u.rate=voiceSettings.rate;u.pitch=voiceSettings.pitch;if(done)u.onend=done;speechSynthesis.speak(u)}
-async function init(){CFG=await fetch('config.json?v='+Date.now()).then(r=>r.json());const cards=$('#cards');Object.entries(CFG.lieux).forEach(([id,x])=>{let c=document.createElement('article');c.className='card';c.dataset.id=id;c.innerHTML=`<div class="photo missing" style="background-image:url('${x.photo}')">${x.icone}</div><div class="info"><h3>${x.titre}</h3><p>${x.ville||''}</p><span class="arrow">›</span></div>`;let img=new Image();img.onload=()=>{c.querySelector('.photo').classList.remove('missing');c.querySelector('.photo').textContent=''};img.src=x.photo;c.onclick=()=>openPlace(id);cards.appendChild(c)})}
+async function init(){CFG=await fetch('config.json?v='+Date.now()).then(r=>r.json());
+const ui=CFG.interface||{};
+$('#uiTitle').textContent=ui.titre||'Ketty vous guide !';
+$('#uiInstruction').textContent=ui.instruction||'Touchez une carte';
+$('#uiSubInstruction').textContent=ui.sous_instruction||'POUR EN SAVOIR PLUS';
+$('#uiBubble').textContent=ui.bulle||'Explorez nos pépites locales !';
+$('#uiModalMessage').textContent=ui.message_modal||'Écoutez Ketty, puis continuez pour récupérer votre itinéraire.';
+$('#replay').textContent=ui.bouton_reecouter||'🔊 Réécouter Ketty';
+$('#go').textContent=ui.bouton_continuer||"C'est parti ! →";
+const cards=$('#cards');Object.entries(CFG.lieux).forEach(([id,x])=>{let c=document.createElement('article');c.className='card';c.dataset.id=id;c.innerHTML=`<div class="photo missing" style="background-image:url('${x.photo}')">${x.icone}</div><div class="info"><h3>${x.titre}</h3><p>${x.ville||''}</p><span class="arrow">›</span></div>`;let img=new Image();img.onload=()=>{c.querySelector('.photo').classList.remove('missing');c.querySelector('.photo').textContent=''};img.src=x.photo;c.onclick=()=>openPlace(id);cards.appendChild(c)})}
 function openPlace(id){current=id;let x=CFG.lieux[id];$('#modalIcon').textContent=x.icone;$('#modalTitle').textContent=x.titre;$('#modal').classList.remove('hidden');speak(x.phrase_lieu)}
 $('#close').onclick=()=>{$('#modal').classList.add('hidden');speechSynthesis.cancel()};$('#replay').onclick=()=>speak(CFG.lieux[current].phrase_lieu);$('#go').onclick=()=>{let a=CFG.phrases_tally_aleatoires[Math.floor(Math.random()*CFG.phrases_tally_aleatoires.length)]+' '+CFG.phrase_tally_finale;speak(a,()=>location.href=CFG.tally_url+'?lieu='+encodeURIComponent(current))};init().catch(e=>console.error(e));

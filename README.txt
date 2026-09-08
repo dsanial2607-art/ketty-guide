@@ -1,25 +1,15 @@
-KETTY GUIDE — VERSION ADMINISTRABLE 7 SITES
+KETTY GUIDE — TOUT ADMINISTRABLE DEPUIS GITHUB
 
-Les cartes sont créées automatiquement depuis config.json.
-Vous pouvez administrer sur GitHub :
-- titre
-- ville
-- photo
-- phrase_lieu prononcée par Ketty
+Dans config.json vous pouvez modifier :
+1. interface : titre, instruction, sous-instruction, bulle, message de la fenêtre, libellés des boutons.
+2. lieux : titre, commune, chemin de la photo, icône et phrase prononcée par Ketty.
+3. phrases_tally_aleatoires et phrase_tally_finale.
 
-PHOTOS
-Créez/conservez le dossier images à la racine et ajoutez :
-palais.jpg
-galabryom.jpg
-tombeau.jpg
-ferme.jpg
-ceramique.jpg
-valrhona.jpg
-oasis.jpg
+Les phrases prononcées par Ketty ne sont pas affichées au visiteur.
 
-Si une photo manque, la carte affiche PHOTO À AJOUTER.
-Pour changer une photo, remplacez simplement le fichier JPG correspondant sur GitHub.
-Les phrases parlées ne sont pas affichées au visiteur.
+Photos : dossier images/
+palais.jpg, galabryom.jpg, tombeau.jpg, ferme.jpg, ceramique.jpg, valrhona.jpg, oasis.jpg
 
-TALLY
-Identifiants : palais, galabryom, tombeau, ferme, ceramique, valrhona, oasis.
+Pour remplacer une photo sans modifier config.json, remplacez simplement le JPG correspondant par un nouveau fichier portant exactement le même nom.
+
+Tally : palais, galabryom, tombeau, ferme, ceramique, valrhona, oasis.
