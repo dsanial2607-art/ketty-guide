@@ -1,19 +1,25 @@
-KETTY - CONFIGURATION GITHUB + PHRASES ALÉATOIRES
+KETTY GUIDE — VERSION ADMINISTRABLE 7 SITES
 
-Les phrases sont désormais dans config.json sur GitHub.
+Les cartes sont créées automatiquement depuis config.json.
+Vous pouvez administrer sur GitHub :
+- titre
+- ville
+- photo
+- phrase_lieu prononcée par Ketty
 
-Quand le visiteur choisit un lieu :
-1. Ketty prononce phrase_lieu.
-2. Le visiteur appuie sur « C'est parti ! ».
-3. Ketty choisit AU HASARD une phrase dans phrases_tally_aleatoires.
-4. Elle ajoute toujours phrase_tally_finale.
-5. Une fois la phrase terminée, Tally s'ouvre avec le bon paramètre lieu.
+PHOTOS
+Créez/conservez le dossier images à la racine et ajoutez :
+palais.jpg
+galabryom.jpg
+tombeau.jpg
+ferme.jpg
+ceramique.jpg
+valrhona.jpg
+oasis.jpg
 
-Pour changer une phrase :
-GitHub > ketty-guide > config.json > crayon Edit > modifier le texte > Commit changes.
-Au prochain rechargement de la page, Ketty récupère la nouvelle configuration.
+Si une photo manque, la carte affiche PHOTO À AJOUTER.
+Pour changer une photo, remplacez simplement le fichier JPG correspondant sur GitHub.
+Les phrases parlées ne sont pas affichées au visiteur.
 
-La voix, vitesse et tonalité restent mémorisées localement sur la tablette via ⚙.
-Les phrases parlées ne sont pas affichées aux visiteurs.
-
-IMPORTANT : ne supprimez pas les guillemets, virgules ou crochets du JSON.
+TALLY
+Identifiants : palais, galabryom, tombeau, ferme, ceramique, valrhona, oasis.

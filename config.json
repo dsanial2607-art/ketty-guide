@@ -3,38 +3,52 @@
   "lieux": {
     "palais": {
       "titre": "Palais idéal du Facteur Cheval",
+      "ville": "Hauterives",
+      "photo": "images/palais.jpg",
       "icone": "🏰",
       "phrase_lieu": "Vous cherchez le palais idéal du facteur Cheval ? Vous êtes bientôt arrivé je vais vous donner la direction pour y aller. Rien de plus simple. En sortant de l'office de tourisme, montez la rue à gauche sur 10m, puis prenez à droite la rue du palai idéal sur 50m, et vous serez arrivé. Je vous souhaite une bonne visite n'hésitez pas à revenir me voir après."
     },
+    "galabryom": {
+      "titre": "Le Monde de Galabryôm",
+      "ville": "",
+      "photo": "images/galabryom.jpg",
+      "icone": "🌿",
+      "phrase_lieu": "À compléter dans GitHub."
+    },
     "tombeau": {
       "titre": "Tombeau du Facteur Cheval",
+      "ville": "Hauterives",
+      "photo": "images/tombeau.jpg",
       "icone": "🧭",
       "phrase_lieu": "Pour aller au tombeau du Facteur Cheval il faut compter environ 5 minute en voiture, ou 15 minute à pied. Je sens que vous êtes courageux n'ess pas ? Remontez tout en haut de la rue puis tournez à gauche dans la rue principale. Longez la route jusqu'au rond point en face de l'église. Prenez tout droit en direction de Saint Vallier. Puis prenez ensuite le petit chemin balisé sur votre gauche. Encore un petit effort, et vous serez bientôt arrivé. bonne visite."
     },
-    "labyrinthes": {
-      "titre": "Labyrinthes de Hauterives",
-      "icone": "🌀",
-      "phrase_lieu": "Pour vous rendre aux Labyrinthes de Hauterives Je vous invite à reprendre votre véhicule, à moins que vous soyez courageux pour y aller à pied ou à vélo. En voiture il faut compter environ 7 mn ou 1h à pied. Du parking du palais idéal suivre la rue Etienne Vassy sur 100m. Au stop prendre à droite la D51 Direction Roibon continuer tout droit pendant 3km puis dans un virage tourner à gauche la route de Fayardaie. Monter cette route sur 150m puis tourner à droite. Si tout va bien vous voilà arrivé. Bonne visite."
+    "ferme": {
+      "titre": "Ferme du Facteur Enchantée",
+      "ville": "",
+      "photo": "images/ferme.jpg",
+      "icone": "🐐",
+      "phrase_lieu": "À compléter dans GitHub."
+    },
+    "ceramique": {
+      "titre": "Maison de la Céramique",
+      "ville": "Saint-Uze",
+      "photo": "images/ceramique.jpg",
+      "icone": "🏺",
+      "phrase_lieu": "La Maison de la Céramique de Saint-Uze vous dévoile les richesses du patrimoine céramique de la Drôme des Collines. En voiture il faut compter environ 20 mn. Du parking du palais idéal reprendre en direction du sud et prendre la D51 suivre direction saint Vallier et continuer jusqu'à Saint-Uze."
     },
     "valrhona": {
       "titre": "Cité du Chocolat Valrhona",
+      "ville": "Tain-l'Hermitage",
+      "photo": "images/valrhona.jpg",
       "icone": "🍫",
       "phrase_lieu": "Envie d'en savoir plus sur la fabrication du chocolat, rendez-vous à la cité du chocolat Valrhona à Tain l'ermitage, à environ 30 minute. Réservez vos billets à tarif réduit auprès de mes collègues."
     },
     "oasis": {
       "titre": "Parc Oasis Aventura",
+      "ville": "Hauterives",
+      "photo": "images/oasis.jpg",
       "icone": "🌳",
       "phrase_lieu": "Pour vous rendre Parc oasis aventura, Je vous invite à reprendre votre véhicule. En voiture il faut compter environ 6 mn. Du parking du palai idéal suivre la rue Etienne Vassy sur 100m. Au stop prendre à droite la D51 Direction Roibon continuer tout droit pendant 4km puis tourner à droite direction Saint christophe et le laris. Monter sur 600m, puis tournez à gauche dans le virage, vous voilà arrivé et prêt à tenter l'aventure."
-    },
-    "peaugres": {
-      "titre": "Safari de Peaugres",
-      "icone": "🦒",
-      "phrase_lieu": "Le safari de peaugres, plus grand parc animalier d'auvergne rhone alpes, se situe à environ 40 minutes d'ici. Réservez vos billets à tarif réduit auprès de mes collègues."
-    },
-    "ceramique": {
-      "titre": "Maison de la Céramique",
-      "icone": "🏺",
-      "phrase_lieu": "La Maison de la Céramique de Saint-Uze vous dévoile les richesses du patrimoine céramique de la Drôme des Collines. En voiture il faut compter environ 20 mn. Du parking du palais idéal reprendre en direction du sud et prendre la D51 suivre direction saint Vallier et continuer jusqu'à Saint-Uze."
     }
   },
   "phrases_tally_aleatoires": [
