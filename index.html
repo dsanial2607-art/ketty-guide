@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Ketty vous guide</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="home" class="screen">
+  <img class="visual" src="ketty_guide_visuel.png" alt="Ketty vous guide">
+  <button class="hotspot palais" aria-label="Palais idéal du Facteur Cheval" data-id="palais"></button>
+  <button class="hotspot oasis" aria-label="Oasis Aventura" data-id="oasis"></button>
+</main>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-card">
+    <button id="close" class="close" aria-label="Fermer">×</button>
+    <div id="modalIcon" class="modal-icon"></div>
+    <div class="mini">KETTY VOUS ACCOMPAGNE</div>
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+    <div class="actions">
+      <button id="listen" class="btn secondary">🔊 Réécouter Ketty</button>
+      <button id="continue" class="btn primary">C'est parti ! →</button>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
