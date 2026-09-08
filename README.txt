@@ -1,18 +1,19 @@
-KETTY VOUS GUIDE - VISUEL INTÉGRÉ
+KETTY - CONFIGURATION GITHUB + PHRASES ALÉATOIRES
 
-Fichiers à mettre ensemble sur GitHub Pages :
-- index.html
-- style.css
-- app.js
-- config.json
-- ketty_guide_visuel.png
+Les phrases sont désormais dans config.json sur GitHub.
 
-Fonctionnement :
-- la carte Palais est tactile
-- la carte Oasis est tactile
-- clic -> fenêtre + texte parlé
-- « C'est parti ! » -> Tally avec ?lieu=palais ou ?lieu=oasis
-- les textes parlés restent modifiables dans config.json
+Quand le visiteur choisit un lieu :
+1. Ketty prononce phrase_lieu.
+2. Le visiteur appuie sur « C'est parti ! ».
+3. Ketty choisit AU HASARD une phrase dans phrases_tally_aleatoires.
+4. Elle ajoute toujours phrase_tally_finale.
+5. Une fois la phrase terminée, Tally s'ouvre avec le bon paramètre lieu.
 
-IMPORTANT :
-Tester via GitHub Pages (pas en ouvrant simplement index.html localement), car config.json est chargé par le navigateur.
+Pour changer une phrase :
+GitHub > ketty-guide > config.json > crayon Edit > modifier le texte > Commit changes.
+Au prochain rechargement de la page, Ketty récupère la nouvelle configuration.
+
+La voix, vitesse et tonalité restent mémorisées localement sur la tablette via ⚙.
+Les phrases parlées ne sont pas affichées aux visiteurs.
+
+IMPORTANT : ne supprimez pas les guillemets, virgules ou crochets du JSON.

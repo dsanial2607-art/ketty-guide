@@ -1,31 +1,26 @@
 <!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Ketty vous guide</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Ketty vous guide</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<main id="home" class="screen">
-  <img class="visual" src="ketty_guide_visuel.png" alt="Ketty vous guide">
-  <button class="hotspot palais" aria-label="Palais idéal du Facteur Cheval" data-id="palais"></button>
-  <button class="hotspot oasis" aria-label="Oasis Aventura" data-id="oasis"></button>
+<main class="screen">
+<img class="visual" src="ketty_guide_visuel.png" alt="Ketty vous guide">
+<button class="hotspot palais" aria-label="Palais idéal" data-id="palais"></button>
+<button class="hotspot oasis" aria-label="Oasis Aventura" data-id="oasis"></button>
+<button id="adminOpen" class="admin-open">⚙</button>
 </main>
-
-<div id="modal" class="modal hidden">
-  <div class="modal-card">
-    <button id="close" class="close" aria-label="Fermer">×</button>
-    <div id="modalIcon" class="modal-icon"></div>
-    <div class="mini">KETTY VOUS ACCOMPAGNE</div>
-    <h2 id="modalTitle"></h2>
-    <p id="modalText"></p>
-    <div class="actions">
-      <button id="listen" class="btn secondary">🔊 Réécouter Ketty</button>
-      <button id="continue" class="btn primary">C'est parti ! →</button>
-    </div>
-  </div>
-</div>
-<script src="app.js"></script>
-</body>
-</html>
+<div id="modal" class="modal hidden"><div class="modal-card visitor">
+<button id="close" class="close">×</button><div id="modalIcon" class="modal-icon"></div>
+<div class="mini">KETTY VOUS ACCOMPAGNE</div><h2 id="modalTitle"></h2>
+<p class="visitor-msg">Écoutez Ketty, puis continuez pour récupérer votre itinéraire.</p>
+<div class="actions"><button id="listen" class="btn secondary">🔊 Réécouter Ketty</button><button id="continue" class="btn primary">C'est parti ! →</button></div>
+</div></div>
+<div id="admin" class="modal hidden"><div class="admin-card">
+<button id="adminClose" class="close">×</button><div class="mini">RÉGLAGES TABLETTE</div><h2>Voix de Ketty</h2>
+<label>Voix française disponible</label><select id="voiceSelect"></select>
+<div class="sliders"><label>Vitesse <span id="rateValue"></span><input id="rate" type="range" min=".75" max="1.25" step=".05"></label>
+<label>Tonalité <span id="pitchValue"></span><input id="pitch" type="range" min=".7" max="1.4" step=".05"></label></div>
+<button id="voiceTest" class="btn secondary full">🔊 Tester cette voix</button>
+<div class="admin-actions"><button id="save" class="btn primary">Enregistrer</button></div>
+<p class="hint">Les phrases de Ketty se modifient dans config.json sur GitHub.</p>
+</div></div>
+<script src="app.js"></script></body></html>

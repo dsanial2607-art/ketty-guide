@@ -1,0 +1,22 @@
+{
+  "tally_url": "https://tally.so/r/1Ae6lW",
+  "lieux": {
+    "palais": {
+      "titre": "Palais idéal du Facteur Cheval",
+      "icone": "🏰",
+      "phrase_lieu": "Le Palais idéal ? Excellent choix ! Et bonne nouvelle : vous êtes presque arrivé."
+    },
+    "oasis": {
+      "titre": "Parc Oasis Aventura",
+      "icone": "🌳",
+      "phrase_lieu": "Envie de prendre de la hauteur ? Direction Oasis Aventura ! Prêt pour l'aventure ?"
+    }
+  },
+  "phrases_tally_aleatoires": [
+    "Si vous voulez garder l'itinéraire avec vous, j'ai une petite solution !",
+    "Pas envie de mémoriser tout le trajet ? Je m'en doutais !",
+    "Si votre mémoire est déjà partie en vacances, pas de panique !",
+    "Je peux vous permettre de retrouver facilement l'itinéraire sur votre téléphone."
+  ],
+  "phrase_tally_finale": "Renseignez votre adresse mail sur ma tablette, et je vous prépare le QR code."
+}

@@ -1,17 +1,10 @@
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff;font-family:Arial,Helvetica,sans-serif;color:#102f55}
-.screen{position:relative;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#fff}
-.visual{display:block;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none}
-.hotspot{position:absolute;border:0;background:transparent;cursor:pointer;border-radius:28px}
-.hotspot:active{background:rgba(255,255,255,.12)}
-/* Coordonnées calculées pour le visuel paysage 16:9 */
-.palais{left:33.4%;top:20.5%;width:30.6%;height:40.5%}
-.oasis{left:65.0%;top:20.5%;width:30.8%;height:40.5%}
-.hidden{display:none!important}
-.modal{position:fixed;z-index:20;inset:0;background:rgba(12,38,64,.48);display:flex;align-items:center;justify-content:center;padding:24px}
-.modal-card{position:relative;width:min(720px,90vw);background:#fff;border-radius:32px;padding:34px 38px 30px;text-align:center;box-shadow:0 24px 70px rgba(0,0,0,.28)}
-.close{position:absolute;right:18px;top:12px;border:0;background:transparent;font-size:40px;color:#102f55;cursor:pointer}
-.modal-icon{font-size:68px}.mini{font-size:14px;font-weight:900;letter-spacing:.13em;margin-top:5px}
-.modal h2{font-size:36px;margin:9px 0 12px}.modal p{font-size:21px;line-height:1.45;margin:0 auto 25px;max-width:610px}
-.actions{display:flex;justify-content:center;gap:14px}.btn{border:0;border-radius:18px;padding:17px 23px;font-size:19px;font-weight:900;cursor:pointer}
-.primary{background:#102f55;color:#fff}.secondary{background:#edf3f5;color:#102f55}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff;font-family:Arial,Helvetica,sans-serif;color:#102f55}
+.screen{position:relative;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#fff}.visual{width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none}
+.hotspot{position:absolute;border:0;background:transparent;cursor:pointer;border-radius:28px}.hotspot:active{background:rgba(255,255,255,.13)}
+.palais{left:33.4%;top:20.5%;width:30.6%;height:40.5%}.oasis{left:65%;top:20.5%;width:30.8%;height:40.5%}
+.admin-open{position:fixed;right:12px;bottom:10px;z-index:5;width:42px;height:42px;border-radius:50%;border:0;background:rgba(16,47,85,.15);color:#102f55;font-size:21px;cursor:pointer}
+.hidden{display:none!important}.modal{position:fixed;z-index:20;inset:0;background:rgba(12,38,64,.5);display:flex;align-items:center;justify-content:center;padding:22px}
+.modal-card,.admin-card{position:relative;background:#fff;border-radius:30px;box-shadow:0 24px 70px rgba(0,0,0,.28)}.modal-card{width:min(700px,90vw);padding:34px;text-align:center}.admin-card{width:min(760px,94vw);max-height:92vh;overflow:auto;padding:32px 36px}
+.close{position:absolute;right:17px;top:10px;border:0;background:transparent;font-size:39px;color:#102f55;cursor:pointer}.modal-icon{font-size:68px}.mini{font-size:14px;font-weight:900;letter-spacing:.13em}
+h2{font-size:34px;margin:8px 0 16px}.visitor-msg{font-size:20px;line-height:1.45;margin:0 auto 24px}.actions,.admin-actions{display:flex;justify-content:center;gap:14px}.btn{border:0;border-radius:17px;padding:15px 21px;font-size:18px;font-weight:900;cursor:pointer}.primary{background:#102f55;color:#fff}.secondary{background:#edf3f5;color:#102f55}.full{width:100%;margin:12px 0}
+.admin-card label{display:block;font-size:16px;font-weight:800;margin:15px 0 7px}.admin-card select,.admin-card textarea{width:100%;font:inherit;border:2px solid #dce5e8;border-radius:13px;padding:12px;background:#fff;color:#102f55}.admin-card textarea{resize:vertical;line-height:1.4}.sliders{display:grid;grid-template-columns:1fr 1fr;gap:20px}.sliders input{width:100%}.admin-card hr{border:0;border-top:1px solid #dce5e8;margin:18px 0}.admin-actions{margin-top:20px}.hint{text-align:center;font-size:13px;opacity:.65;line-height:1.4}
