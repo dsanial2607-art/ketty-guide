@@ -1,27 +1,53 @@
-RÉGLAGES VOIX KETTY — MODE ADMIN CACHÉ
+KETTY GUIDE — VERSION SITE / ADMINISTRABLE
 
-Cette version remplace la proposition précédente (non intégrée).
+Cette version reprend le style validé :
+- fond uni crème ;
+- titre Ketty plus sobre ;
+- bandeau central blanc ;
+- cartes épurées ;
+- footer vert ;
+- logo officiel fourni par vous, en haut à droite.
 
-À remplacer sur GitHub :
+FICHIERS À METTRE SUR GITHUB
 - index.html
 - app.js
 - style.css
-
-Ne pas remplacer :
 - config.json
-- dossier images
+- images/logo-ot.png
 
-UTILISATION
+CONSERVEZ VOS FICHIERS EXISTANTS
+- images/ketty.png
+- images/sites/*
+
+ADMINISTRATION DANS config.json
+interface.logo_ot
+  = chemin vers le logo affiché en haut à droite.
+  Exemple : "images/logo-ot.png"
+
+interface.afficher_logo_ot
+  = true pour afficher le logo, false pour le masquer.
+
+Vous pouvez remplacer le logo par une autre image :
+1. téléversez l'image dans le dossier images ;
+2. modifiez "logo_ot" dans config.json ;
+3. validez le commit.
+
+Autres éléments administrables :
+- couleurs générales ;
+- titre ;
+- instruction ;
+- sous-instruction ;
+- bulle Ketty ;
+- footer ;
+- nom/signature ;
+- textes des boutons ;
+- titres, communes, photos, couleurs, icônes et textes vocaux de chaque lieu.
+
+RÉGLAGES VOIX
 Adresse normale :
 https://dsanial2607-art.github.io/ketty-guide/
-=> aucun bouton ⚙ visible pour le visiteur.
+=> aucun ⚙ visible.
 
-Adresse administrateur :
+Adresse admin :
 https://dsanial2607-art.github.io/ketty-guide/?admin=1
-=> le bouton ⚙ apparaît.
-
-Les réglages de voix, vitesse et hauteur sont enregistrés dans le navigateur de la tablette.
-Après réglage, revenir à l'adresse normale : le ⚙ disparaît mais les réglages restent utilisés.
-
-Les corrections de prononciation des noms locaux se font toujours dans :
-config.json > lieux > [site] > phrase_lieu
+=> ⚙ visible, réglages de voix mémorisés sur la tablette.

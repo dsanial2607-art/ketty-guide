@@ -9,7 +9,11 @@
 <body>
   <div id="app">
     <header>
-      <div class="wood"><span id="title"></span></div>
+      <div class="title-zone">
+        <div id="title" class="main-title"></div>
+        <div class="title-line"></div>
+      </div>
+
       <div class="touch">
         <div class="finger">☝️</div>
         <div>
@@ -17,7 +21,10 @@
           <div id="sub" class="touch-sub"></div>
         </div>
       </div>
-      <div id="tagline" class="tagline"></div>
+
+      <div class="logo-zone">
+        <img id="officeLogo" class="office-logo" alt="">
+      </div>
     </header>
 
     <main>
@@ -30,13 +37,12 @@
 
     <footer>
       <div class="brand">
-        <span id="brandName"></span><br>
+        <span id="brandName"></span>
         <small id="brandSignature"></small>
       </div>
       <div id="footerText" class="footer-text"></div>
     </footer>
   </div>
-
 
   <button id="voiceSettingsBtn" class="voice-settings-btn" title="Réglages voix" aria-label="Réglages voix">⚙</button>
 
