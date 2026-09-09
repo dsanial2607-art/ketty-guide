@@ -30,7 +30,13 @@
       "photo": "images/sites/galabryom.png",
       "couleur": "#55A84E",
       "icone": "🌿",
-      "phrase_lieu": "À compléter dans GitHub."
+      "phrase_lieu": "Vous voulez découvrir le Monde de Galabryôm ? Alors, c'est parti ! Je vous conseille de reprendre votre voiture… sauf si vous avez envie de vous dégourdir les jambes ou de sortir le vélo !
+
+En voiture, comptez environ 7 minutes. À pied, prévoyez plutôt une heure… Je vous laisse choisir votre niveau de courage !
+
+Depuis le parking du Palais idéal, suivez la rue Étienne Vassy sur environ 100 mètres. Au stop, tournez à droite sur la D51 en direction de Roybon. Continuez tout droit pendant environ 3 kilomètres, puis, dans un virage, tournez à gauche sur la route de Fayardaie. Montez sur environ 150 mètres, puis prenez à droite.
+
+Et voilà ! Si vous avez bien suivi mes indications, vous êtes arrivé au Monde de Galabryôm. Sinon… je décline toute responsabilité ! Bonne découverte et amusez-vous bien !"
     },
     "tombeau": {
       "titre": "Tombeau du Facteur Cheval",
@@ -46,7 +52,11 @@
       "photo": "images/sites/ferme.jpg",
       "couleur": "#F3A21B",
       "icone": "🐐",
-      "phrase_lieu": "À compléter dans GitHub."
+      "phrase_lieu": "Vous voulez découvrir la Ferme du Facteur Enchantée ? Alors, je vais vous indiquer comment vous y rendre ! Je vous conseille de reprendre votre voiture : comptez environ 5 minutes depuis le Palais idéal. La ferme se trouve au 80 route de la Galliardière, toujours à Hauterives.
+
+Suivez mes indications pour rejoindre la route de la Galliardière et vous arriverez rapidement à la ferme.
+
+Et voilà ! Il ne me reste plus qu'à vous souhaiter une belle découverte. Profitez bien… et si vous croisez un animal qui parle, surtout, revenez me prévenir : entre robots, on devrait avoir des choses à se raconter !"
     },
     "ceramique": {
       "titre": "Maison de la Céramique",
