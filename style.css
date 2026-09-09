@@ -120,3 +120,33 @@ footer{
   .cards{gap:10px}
   .office-logo{max-height:78px}
 }
+
+.language-splash{
+  position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:var(--bg,#f3efe6);
+}
+.language-splash.hidden{display:none}
+.language-panel{
+  width:min(760px,88vw);background:white;border-radius:32px;padding:34px 50px 44px;text-align:center;
+  box-shadow:0 18px 50px rgba(23,63,58,.18)
+}
+.language-logo{max-width:260px;max-height:110px;object-fit:contain;margin-bottom:12px}
+.language-panel h1{font-family:Georgia,"Times New Roman",serif;color:var(--ink);font-size:48px;margin:8px 0}
+.language-panel h1 span{color:var(--accent)}
+.language-panel p{font-size:21px;margin:8px 0 28px}
+.language-buttons{display:flex;gap:22px;justify-content:center}
+.language-buttons button{
+  min-width:240px;padding:20px 30px;border:0;border-radius:20px;background:var(--footer);color:white;
+  font-size:25px;font-weight:800;box-shadow:0 7px 16px rgba(0,0,0,.14);cursor:pointer
+}
+.language-buttons button:last-child{background:var(--accent)}
+.logo-zone{position:relative;gap:10px}
+.language-switch{display:flex;gap:5px;margin-right:8px;margin-top:5px}
+.language-switch button{
+  border:2px solid var(--ink);background:white;color:var(--ink);border-radius:18px;padding:7px 10px;
+  font-size:13px;font-weight:900;cursor:pointer
+}
+.language-switch button.active{background:var(--ink);color:white}
+.voice-settings-box{max-height:88vh;overflow:auto}
+.voice-lang-section{padding:8px 0 18px;border-bottom:1px solid #d9e0e8}
+.voice-lang-section:last-of-type{border-bottom:0}
+.voice-lang-section h3{margin:8px 0 12px;font-size:21px}

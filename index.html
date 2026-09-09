@@ -7,6 +7,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="languageSplash" class="language-splash">
+    <div class="language-panel">
+      <img id="languageLogo" class="language-logo" src="images/logo-ot.png" alt="Autour du Palais idéal">
+      <h1>Bienvenue ! <span>Hello!</span></h1>
+      <p>Choisissez votre langue · Choose your language</p>
+      <div class="language-buttons">
+        <button data-lang="fr">🇫🇷 Français</button>
+        <button data-lang="en">🇬🇧 English</button>
+      </div>
+    </div>
+  </div>
+
   <div id="app">
     <header>
       <div class="title-zone">
@@ -23,6 +35,10 @@
       </div>
 
       <div class="logo-zone">
+        <div id="languageSwitch" class="language-switch">
+          <button data-lang="fr">FR</button>
+          <button data-lang="en">EN</button>
+        </div>
         <img id="officeLogo" class="office-logo" alt="">
       </div>
     </header>
@@ -51,16 +67,26 @@
       <button id="closeVoiceSettings" class="close">×</button>
       <h2>Réglages de la voix</h2>
 
-      <label for="voiceSelect">Voix française</label>
-      <select id="voiceSelect"></select>
-
-      <label for="rateRange">Vitesse : <span id="rateValue">1.00</span></label>
-      <input id="rateRange" type="range" min="0.6" max="1.4" step="0.05" value="1">
-
-      <label for="pitchRange">Hauteur : <span id="pitchValue">1.00</span></label>
-      <input id="pitchRange" type="range" min="0.6" max="1.4" step="0.05" value="1">
-
-      <button id="testVoiceBtn" class="test-voice-btn">🔊 Tester la voix</button>
+      <div class="voice-lang-section">
+        <h3>🇫🇷 Voix française</h3>
+        <label for="voiceSelectFr">Voix</label>
+        <select id="voiceSelectFr"></select>
+        <label for="rateRangeFr">Vitesse : <span id="rateValueFr">1.00</span></label>
+        <input id="rateRangeFr" type="range" min="0.6" max="1.4" step="0.05" value="1">
+        <label for="pitchRangeFr">Hauteur : <span id="pitchValueFr">1.00</span></label>
+        <input id="pitchRangeFr" type="range" min="0.6" max="1.4" step="0.05" value="1">
+        <button id="testVoiceFr" class="test-voice-btn">🔊 Tester la voix française</button>
+      </div>
+      <div class="voice-lang-section">
+        <h3>🇬🇧 English voice</h3>
+        <label for="voiceSelectEn">Voice</label>
+        <select id="voiceSelectEn"></select>
+        <label for="rateRangeEn">Speed: <span id="rateValueEn">1.00</span></label>
+        <input id="rateRangeEn" type="range" min="0.6" max="1.4" step="0.05" value="1">
+        <label for="pitchRangeEn">Pitch: <span id="pitchValueEn">1.00</span></label>
+        <input id="pitchRangeEn" type="range" min="0.6" max="1.4" step="0.05" value="1">
+        <button id="testVoiceEn" class="test-voice-btn">🔊 Test English voice</button>
+      </div>
       <p class="voice-note">Ces réglages sont mémorisés sur cette tablette.</p>
     </div>
   </div>

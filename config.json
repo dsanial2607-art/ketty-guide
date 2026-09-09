@@ -8,18 +8,39 @@
     "couleur_texte": "#173F3A",
     "couleur_principale": "#7FAA5C",
     "couleur_footer": "#174D43",
-    "titre": "Ketty vous guide !",
-    "instruction": "Touchez une carte",
-    "sous_instruction": "POUR EN SAVOIR PLUS",
-    "bulle_ketty": "Explorez nos pépites locales !",
-    "nom_destination": "PORTE DE DRÔMARDÈCHE",
-    "signature_destination": "OFFICE DE TOURISME",
-    "footer": "PATRIMOINE • NATURE • SAVOIR-FAIRE • SAVEURS",
-    "message_modal": "Écoutez Ketty, puis continuez pour récupérer votre itinéraire.",
-    "bouton_reecouter": "🔊 Réécouter Ketty",
-    "bouton_continuer": "C'est parti ! →"
+    "textes": {
+      "fr": {
+        "titre": "Ketty vous guide !",
+        "instruction": "Touchez une carte",
+        "sous_instruction": "POUR EN SAVOIR PLUS",
+        "bulle_ketty": "Explorez nos pépites locales !",
+        "nom_destination": "PORTE DE DRÔMARDÈCHE",
+        "signature_destination": "OFFICE DE TOURISME",
+        "footer": "PATRIMOINE • NATURE • SAVOIR-FAIRE • SAVEURS",
+        "message_modal": "Écoutez Ketty, puis continuez pour récupérer votre itinéraire.",
+        "bouton_reecouter": "🔊 Réécouter Ketty",
+        "bouton_continuer": "C'est parti ! →",
+        "annonce_langue": "Je parle français maintenant !"
+      },
+      "en": {
+        "titre": "Ketty guides you!",
+        "instruction": "Tap a card",
+        "sous_instruction": "TO FIND OUT MORE",
+        "bulle_ketty": "Discover our local gems!",
+        "nom_destination": "PORTE DE DRÔMARDÈCHE",
+        "signature_destination": "TOURIST OFFICE",
+        "footer": "HERITAGE • NATURE • CRAFTSMANSHIP • FLAVOURS",
+        "message_modal": "Listen to Ketty, then continue to get your route.",
+        "bouton_reecouter": "🔊 Listen again",
+        "bouton_continuer": "Let's go! →",
+        "annonce_langue": "I speak English now!"
+      }
+    }
   },
-  "tally_url": "https://tally.so/r/1Ae6lW",
+  "tally_url": {
+    "fr": "https://tally.so/r/1Ae6lW",
+    "en": "URL_FORMULAIRE_TALLY_EN"
+  },
   "lieux": {
     "palais": {
       "titre": "Palais idéal du Facteur Cheval",
@@ -27,7 +48,10 @@
       "photo": "images/sites/palais.jpg",
       "couleur": "#E0A51E",
       "icone": "🏰",
-      "phrase_lieu": "Vous cherchez le palais idéal du facteur Cheval ? Vous êtes bientôt arrivé je vais vous donner la direction pour y aller. Rien de plus simple. En sortant de l'office de tourisme, montez la rue à gauche sur 10 mètres, puis prenez à droite la rue du Palais idéal sur 50 mètres, et vous serez arrivé. Je vous souhaite une bonne visite, n'hésitez pas à revenir me voir après."
+      "phrase_lieu": {
+        "fr": "Vous cherchez le palais idéal du facteur Cheval ? Vous êtes bientôt arrivé je vais vous donner la direction pour y aller. Rien de plus simple. En sortant de l'office de tourisme, montez la rue à gauche sur 10 mètres, puis prenez à droite la rue du Palais idéal sur 50 mètres, et vous serez arrivé. Je vous souhaite une bonne visite, n'hésitez pas à revenir me voir après.",
+        "en": "Are you looking for the Palais idéal du Facteur Cheval? You're almost there, so I'll show you the way. It's very simple. When you leave the tourist office, walk up the street on your left for about 10 metres, then turn right onto Rue du Palais Idéal. Continue for about 50 metres and you're there! Enjoy your visit, and don't hesitate to come back and see me afterwards."
+      }
     },
     "galabryom": {
       "titre": "Le Monde de Galabryôm",
@@ -35,7 +59,10 @@
       "photo": "images/sites/galabryom.png",
       "couleur": "#6DA55B",
       "icone": "🌿",
-      "phrase_lieu": "Vous voulez découvrir le Monde de Galabryôm ? Alors, c'est parti ! Je vous conseille de reprendre votre voiture… sauf si vous avez envie de vous dégourdir les jambes ou de sortir le vélo ! En voiture, comptez environ 7 minutes. À pied, prévoyez plutôt une heure… Je vous laisse choisir votre niveau de courage ! Depuis le parking du Palais idéal, suivez la rue Étienne Vassy sur environ 100 mètres. Au stop, tournez à droite sur la D51 en direction de Roybon. Continuez tout droit pendant environ 3 kilomètres, puis, dans un virage, tournez à gauche sur la route de Fayardaie. Montez sur environ 150 mètres, puis prenez à droite. Et voilà ! Si vous avez bien suivi mes indications, vous êtes arrivé au Monde de Galabryôm. Sinon… je décline toute responsabilité ! Bonne découverte et amusez-vous bien !"
+      "phrase_lieu": {
+        "fr": "Vous voulez découvrir le Monde de Galabryôm ? Alors, c'est parti ! Je vous conseille de reprendre votre voiture… sauf si vous avez envie de vous dégourdir les jambes ou de sortir le vélo ! En voiture, comptez environ 7 minutes. À pied, prévoyez plutôt une heure… Je vous laisse choisir votre niveau de courage ! Depuis le parking du Palais idéal, suivez la rue Étienne Vassy sur environ 100 mètres. Au stop, tournez à droite sur la D51 en direction de Roybon. Continuez tout droit pendant environ 3 kilomètres, puis, dans un virage, tournez à gauche sur la route de Fayardaie. Montez sur environ 150 mètres, puis prenez à droite. Et voilà ! Si vous avez bien suivi mes indications, vous êtes arrivé au Monde de Galabryôm. Sinon… je décline toute responsabilité ! Bonne découverte et amusez-vous bien !",
+        "en": "Would you like to discover Le Monde de Galabryôm? Then let's go! I recommend taking your car again… unless you fancy stretching your legs or getting on your bike! By car, allow around 7 minutes. On foot, it's closer to an hour… I'll let you decide how brave you're feeling! From the Palais idéal car park, follow Rue Étienne Vassy for about 100 metres. At the stop sign, turn right onto the D51 towards Roybon. Continue straight ahead for around 3 kilometres, then, on a bend, turn left onto Route de Fayardaie. Go uphill for about 150 metres, then turn right. And there you are! If you've followed my directions, you've reached Le Monde de Galabryôm. If not… I accept absolutely no responsibility! Have fun and enjoy your visit!"
+      }
     },
     "tombeau": {
       "titre": "Tombeau du Facteur Cheval",
@@ -43,7 +70,10 @@
       "photo": "images/sites/tombeau.jpg",
       "couleur": "#B65A37",
       "icone": "🧭",
-      "phrase_lieu": "Pour aller au tombeau du Facteur Cheval il faut compter environ 5 minutes en voiture, ou 15 minutes à pied. Je sens que vous êtes courageux n'est-ce pas ? Remontez tout en haut de la rue puis tournez à gauche dans la rue principale. Longez la route jusqu'au rond-point en face de l'église. Prenez tout droit en direction de Saint-Vallier. Puis prenez ensuite le petit chemin balisé sur votre gauche. Encore un petit effort, et vous serez bientôt arrivé. Bonne visite."
+      "phrase_lieu": {
+        "fr": "Pour aller au tombeau du Facteur Cheval il faut compter environ 5 minutes en voiture, ou 15 minutes à pied. Je sens que vous êtes courageux n'est-ce pas ? Remontez tout en haut de la rue puis tournez à gauche dans la rue principale. Longez la route jusqu'au rond-point en face de l'église. Prenez tout droit en direction de Saint-Vallier. Puis prenez ensuite le petit chemin balisé sur votre gauche. Encore un petit effort, et vous serez bientôt arrivé. Bonne visite.",
+        "en": "To reach the Tomb of the Facteur Cheval, allow around 5 minutes by car or 15 minutes on foot. I have a feeling you're feeling brave, aren't you? Walk all the way up the street, then turn left onto the main road. Follow it to the roundabout opposite the church. Go straight ahead towards Saint-Vallier, then take the small signposted path on your left. Just one last little effort and you'll soon be there. Enjoy your visit!"
+      }
     },
     "ferme": {
       "titre": "Ferme du Facteur Enchantée",
@@ -51,7 +81,10 @@
       "photo": "images/sites/ferme.jpg",
       "couleur": "#E87536",
       "icone": "🐐",
-      "phrase_lieu": "Vous voulez découvrir la Ferme du Facteur Enchantée ? Alors, je vais vous indiquer comment vous y rendre ! Je vous conseille de reprendre votre voiture : comptez environ 5 minutes depuis le Palais idéal. La ferme se trouve au 80 route de la Galliardière, toujours à Hauterives. Pour ne pas vous perdre en chemin, je vais vous préparer l'itinéraire directement sur votre téléphone. Et voilà ! Il ne me reste plus qu'à vous souhaiter une belle découverte de la Ferme du Facteur Enchantée. Profitez bien… et si vous croisez un animal qui parle, surtout, revenez me prévenir : entre robots, on devrait avoir des choses à se raconter !"
+      "phrase_lieu": {
+        "fr": "Vous voulez découvrir la Ferme du Facteur Enchantée ? Alors, je vais vous indiquer comment vous y rendre ! Je vous conseille de reprendre votre voiture : comptez environ 5 minutes depuis le Palais idéal. La ferme se trouve au 80 route de la Galliardière, toujours à Hauterives. Pour ne pas vous perdre en chemin, je vais vous préparer l'itinéraire directement sur votre téléphone. Et voilà ! Il ne me reste plus qu'à vous souhaiter une belle découverte de la Ferme du Facteur Enchantée. Profitez bien… et si vous croisez un animal qui parle, surtout, revenez me prévenir : entre robots, on devrait avoir des choses à se raconter !",
+        "en": "Would you like to discover the Ferme du Facteur Enchantée? I'll show you how to get there! I recommend taking your car; it's about 5 minutes from the Palais idéal. The farm is at 80 Route de la Galliardière, here in Hauterives. To make sure you don't get lost, I'll prepare the route directly on your phone. And there you go! All that's left for me to do is wish you a wonderful visit. Enjoy yourselves… and if you meet an animal that can talk, please come back and tell me. Robot to robot, we might have a few things to discuss!"
+      }
     },
     "ceramique": {
       "titre": "Maison de la Céramique",
@@ -59,7 +92,10 @@
       "photo": "images/sites/ceramique.jpg",
       "couleur": "#7447C6",
       "icone": "🏺",
-      "phrase_lieu": "La Maison de la Céramique de Saint-Uze vous dévoile les richesses du patrimoine céramique de la Drôme des Collines. En voiture il faut compter environ 20 minutes. Du parking du Palais idéal, reprenez en direction du sud et prenez la D51. Suivez la direction de Saint-Vallier et continuez jusqu'à Saint-Uze."
+      "phrase_lieu": {
+        "fr": "La Maison de la Céramique de Saint-Uze vous dévoile les richesses du patrimoine céramique de la Drôme des Collines. En voiture il faut compter environ 20 minutes. Du parking du Palais idéal, reprenez en direction du sud et prenez la D51. Suivez la direction de Saint-Vallier et continuez jusqu'à Saint-Uze.",
+        "en": "The Maison de la Céramique in Saint-Uze reveals the rich ceramic heritage of the Drôme des Collines. By car, allow around 20 minutes. From the Palais idéal car park, head south and take the D51. Follow signs towards Saint-Vallier and continue to Saint-Uze."
+      }
     },
     "valrhona": {
       "titre": "Cité du Chocolat Valrhona",
@@ -67,7 +103,10 @@
       "photo": "images/sites/valrhona.jpg",
       "couleur": "#A9384F",
       "icone": "🍫",
-      "phrase_lieu": "Envie d'en savoir plus sur la fabrication du chocolat ? Rendez-vous à la Cité du Chocolat Valrhona à Tain-l'Hermitage, à environ 30 minutes. Réservez vos billets à tarif réduit auprès de mes collègues."
+      "phrase_lieu": {
+        "fr": "Envie d'en savoir plus sur la fabrication du chocolat ? Rendez-vous à la Cité du Chocolat Valrhona à Tain-l'Hermitage, à environ 30 minutes. Réservez vos billets à tarif réduit auprès de mes collègues.",
+        "en": "Would you like to find out how chocolate is made? Head to the Cité du Chocolat Valrhona in Tain-l'Hermitage, around 30 minutes from here. You can buy reduced-price tickets from my colleagues."
+      }
     },
     "oasis": {
       "titre": "Parc Oasis Aventura",
@@ -75,14 +114,28 @@
       "photo": "images/sites/oasis.jpg",
       "couleur": "#2F8A50",
       "icone": "🌳",
-      "phrase_lieu": "Pour vous rendre au Parc Oasis Aventura, je vous invite à reprendre votre véhicule. En voiture il faut compter environ 6 minutes. Du parking du Palais idéal, suivez la rue Étienne Vassy sur 100 mètres. Au stop prenez à droite la D51 direction Roybon, continuez tout droit pendant 4 kilomètres puis tournez à droite direction Saint-Christophe-et-le-Laris. Montez sur 600 mètres, puis tournez à gauche dans le virage. Vous voilà arrivé et prêt à tenter l'aventure."
+      "phrase_lieu": {
+        "fr": "Pour vous rendre au Parc Oasis Aventura, je vous invite à reprendre votre véhicule. En voiture il faut compter environ 6 minutes. Du parking du Palais idéal, suivez la rue Étienne Vassy sur 100 mètres. Au stop prenez à droite la D51 direction Roybon, continuez tout droit pendant 4 kilomètres puis tournez à droite direction Saint-Christophe-et-le-Laris. Montez sur 600 mètres, puis tournez à gauche dans le virage. Vous voilà arrivé et prêt à tenter l'aventure.",
+        "en": "To reach Parc Oasis Aventura, I recommend taking your car. The journey takes around 6 minutes. From the Palais idéal car park, follow Rue Étienne Vassy for 100 metres. At the stop sign, turn right onto the D51 towards Roybon and continue straight ahead for 4 kilometres. Then turn right towards Saint-Christophe-et-le-Laris. Continue uphill for 600 metres, then turn left on the bend. There you are, ready for your next adventure!"
+      }
     }
   },
-  "phrases_tally_aleatoires": [
-    "Si vous voulez garder l'itinéraire avec vous, j'ai une petite solution !",
-    "Pas envie de mémoriser tout le trajet ? Je m'en doutais !",
-    "Si votre mémoire est déjà partie en vacances, pas de panique !",
-    "Je peux vous permettre de retrouver facilement l'itinéraire sur votre téléphone."
-  ],
-  "phrase_tally_finale": "Renseignez votre adresse mail sur ma tablette, et je vous prépare le QR code."
+  "phrases_tally_aleatoires": {
+    "fr": [
+      "Si vous voulez garder l'itinéraire avec vous, j'ai une petite solution !",
+      "Pas envie de mémoriser tout le trajet ? Je m'en doutais !",
+      "Si votre mémoire est déjà partie en vacances, pas de panique !",
+      "Je peux vous permettre de retrouver facilement l'itinéraire sur votre téléphone."
+    ],
+    "en": [
+      "If you'd like to keep the route with you, I've got a little solution!",
+      "Don't feel like memorising the whole route? I thought so!",
+      "If your memory has already gone on holiday, don't worry!",
+      "I can help you find the route easily on your phone."
+    ]
+  },
+  "phrase_tally_finale": {
+    "fr": "Renseignez votre adresse mail sur ma tablette, et je vous prépare le QR code.",
+    "en": "Enter your email address on my screen and I'll prepare the QR code for you."
+  }
 }
