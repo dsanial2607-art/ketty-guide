@@ -1,12 +1,73 @@
 let CFG={},current=null;const $=s=>document.querySelector(s);
 
+let availableVoices=[];
+const VOICE_STORAGE_KEY="kettyVoiceSettings";
+
+function getVoiceSettings(){
+  try{
+    return JSON.parse(localStorage.getItem(VOICE_STORAGE_KEY)) || {};
+  }catch(e){
+    return {};
+  }
+}
+
+function saveVoiceSettings(){
+  const data={
+    voiceName: $("#voiceSelect")?.value || "",
+    rate: parseFloat($("#rateRange")?.value || "1"),
+    pitch: parseFloat($("#pitchRange")?.value || "1")
+  };
+  localStorage.setItem(VOICE_STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadVoices(){
+  availableVoices=speechSynthesis.getVoices() || [];
+  const select=$("#voiceSelect");
+  if(!select)return;
+
+  const french=availableVoices.filter(v => (v.lang||"").toLowerCase().startsWith("fr"));
+  const list=french.length ? french : availableVoices;
+
+  select.innerHTML="";
+  list.forEach(v=>{
+    const o=document.createElement("option");
+    o.value=v.name;
+    o.textContent=`${v.name} — ${v.lang || "langue inconnue"}`;
+    select.appendChild(o);
+  });
+
+  const saved=getVoiceSettings();
+  if(saved.voiceName && [...select.options].some(o=>o.value===saved.voiceName)){
+    select.value=saved.voiceName;
+  }
+}
+
+function applySavedVoiceSettings(){
+  const saved=getVoiceSettings();
+  if($("#rateRange")){
+    $("#rateRange").value=saved.rate ?? 1;
+    $("#rateValue").textContent=Number($("#rateRange").value).toFixed(2);
+  }
+  if($("#pitchRange")){
+    $("#pitchRange").value=saved.pitch ?? 1;
+    $("#pitchValue").textContent=Number($("#pitchRange").value).toFixed(2);
+  }
+}
+
 function speak(t,end){
   speechSynthesis.cancel();
   if(!t)return;
+
   const u=new SpeechSynthesisUtterance(t);
   u.lang="fr-FR";
-  u.rate=1;
-  u.pitch=1;
+
+  const saved=getVoiceSettings();
+  u.rate=saved.rate ?? 1;
+  u.pitch=saved.pitch ?? 1;
+
+  const chosen=availableVoices.find(v=>v.name===saved.voiceName);
+  if(chosen)u.voice=chosen;
+
   if(end)u.onend=end;
   speechSynthesis.speak(u);
 }
@@ -93,6 +154,56 @@ $("#go").onclick=()=>{
   speak(r,go);
   setTimeout(go,Math.max(5000,r.length*70));
 };
+
+
+function initVoiceSettings(){
+  loadVoices();
+  applySavedVoiceSettings();
+
+  // Le bouton de réglage n'est visible qu'en mode administrateur.
+  const adminMode = new URLSearchParams(window.location.search).get("admin") === "1";
+  const settingsBtn = $("#voiceSettingsBtn");
+  if(settingsBtn){
+    settingsBtn.style.display = adminMode ? "block" : "none";
+  }
+
+  if(typeof speechSynthesis !== "undefined"){
+    speechSynthesis.onvoiceschanged=loadVoices;
+    setTimeout(loadVoices,300);
+    setTimeout(loadVoices,1200);
+  }
+
+  $("#voiceSettingsBtn").onclick=()=>{
+    loadVoices();
+    applySavedVoiceSettings();
+    $("#voiceSettingsModal").classList.remove("hidden");
+  };
+
+  $("#closeVoiceSettings").onclick=()=>{
+    saveVoiceSettings();
+    $("#voiceSettingsModal").classList.add("hidden");
+  };
+
+  $("#voiceSelect").onchange=saveVoiceSettings;
+
+  $("#rateRange").oninput=()=>{
+    $("#rateValue").textContent=Number($("#rateRange").value).toFixed(2);
+    saveVoiceSettings();
+  };
+
+  $("#pitchRange").oninput=()=>{
+    $("#pitchValue").textContent=Number($("#pitchRange").value).toFixed(2);
+    saveVoiceSettings();
+  };
+
+  $("#testVoiceBtn").onclick=()=>{
+    saveVoiceSettings();
+    speak("Bonjour, je suis Ketty. Test de la voix française.");
+  };
+}
+
+
+initVoiceSettings();
 
 fetch("config.json?v="+Date.now())
   .then(r=>r.json())

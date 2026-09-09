@@ -1,30 +1,27 @@
-KETTY GUIDE — VERSION FONCTIONNELLE ADMINISTRABLE
+RÉGLAGES VOIX KETTY — MODE ADMIN CACHÉ
 
-Fond plein écran :
-- images/background.jpg
-- remplaçable par n'importe quelle image paysage 16:9
-- ou modifier config.json > interface > background
+Cette version remplace la proposition précédente (non intégrée).
 
-KettyBot transparent :
-- images/ketty.png
+À remplacer sur GitHub :
+- index.html
+- app.js
+- style.css
 
-Textes généraux :
-config.json > interface
+Ne pas remplacer :
+- config.json
+- dossier images
 
-Vignettes :
-config.json > lieux > [identifiant]
-Champs administrables : titre, commune, photo, couleur, icone, phrase_lieu.
+UTILISATION
+Adresse normale :
+https://dsanial2607-art.github.io/ketty-guide/
+=> aucun bouton ⚙ visible pour le visiteur.
 
-Photos :
-images/sites/palais.jpg
-images/sites/galabryom.jpg
-images/sites/tombeau.jpg
-images/sites/ferme.jpg
-images/sites/ceramique.jpg
-images/sites/valrhona.jpg
-images/sites/oasis.jpg
+Adresse administrateur :
+https://dsanial2607-art.github.io/ketty-guide/?admin=1
+=> le bouton ⚙ apparaît.
 
-Pour remplacer une photo sans modifier config.json, remplacez simplement le JPG par un nouveau fichier portant exactement le même nom.
+Les réglages de voix, vitesse et hauteur sont enregistrés dans le navigateur de la tablette.
+Après réglage, revenir à l'adresse normale : le ⚙ disparaît mais les réglages restent utilisés.
 
-Tally :
-palais, galabryom, tombeau, ferme, ceramique, valrhona, oasis
+Les corrections de prononciation des noms locaux se font toujours dans :
+config.json > lieux > [site] > phrase_lieu
