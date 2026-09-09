@@ -1,15 +1,30 @@
-KETTY GUIDE — TOUT ADMINISTRABLE DEPUIS GITHUB
+KETTY GUIDE — VERSION FONCTIONNELLE ADMINISTRABLE
 
-Dans config.json vous pouvez modifier :
-1. interface : titre, instruction, sous-instruction, bulle, message de la fenêtre, libellés des boutons.
-2. lieux : titre, commune, chemin de la photo, icône et phrase prononcée par Ketty.
-3. phrases_tally_aleatoires et phrase_tally_finale.
+Fond plein écran :
+- images/background.jpg
+- remplaçable par n'importe quelle image paysage 16:9
+- ou modifier config.json > interface > background
 
-Les phrases prononcées par Ketty ne sont pas affichées au visiteur.
+KettyBot transparent :
+- images/ketty.png
 
-Photos : dossier images/
-palais.jpg, galabryom.jpg, tombeau.jpg, ferme.jpg, ceramique.jpg, valrhona.jpg, oasis.jpg
+Textes généraux :
+config.json > interface
 
-Pour remplacer une photo sans modifier config.json, remplacez simplement le JPG correspondant par un nouveau fichier portant exactement le même nom.
+Vignettes :
+config.json > lieux > [identifiant]
+Champs administrables : titre, commune, photo, couleur, icone, phrase_lieu.
 
-Tally : palais, galabryom, tombeau, ferme, ceramique, valrhona, oasis.
+Photos :
+images/sites/palais.jpg
+images/sites/galabryom.jpg
+images/sites/tombeau.jpg
+images/sites/ferme.jpg
+images/sites/ceramique.jpg
+images/sites/valrhona.jpg
+images/sites/oasis.jpg
+
+Pour remplacer une photo sans modifier config.json, remplacez simplement le JPG par un nouveau fichier portant exactement le même nom.
+
+Tally :
+palais, galabryom, tombeau, ferme, ceramique, valrhona, oasis

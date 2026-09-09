@@ -1,52 +1,72 @@
 {
+  "interface": {
+    "background": "images/background.jpg",
+    "ketty_image": "images/ketty.png",
+    "titre": "Ketty vous guide !",
+    "instruction": "Touchez une carte",
+    "sous_instruction": "POUR EN SAVOIR PLUS",
+    "accroche": "Des expériences uniques, tout près d'ici !",
+    "bulle_ketty": "Explorez nos pépites locales !",
+    "footer": "Ici, chaque visite a une histoire...",
+    "message_modal": "Écoutez Ketty, puis continuez pour récupérer votre itinéraire.",
+    "bouton_reecouter": "🔊 Réécouter Ketty",
+    "bouton_continuer": "C'est parti ! →"
+  },
   "tally_url": "https://tally.so/r/1Ae6lW",
   "lieux": {
     "palais": {
       "titre": "Palais idéal du Facteur Cheval",
-      "ville": "Hauterives",
-      "photo": "images/palais.jpg",
+      "commune": "Hauterives",
+      "photo": "images/sites/palais.jpg",
+      "couleur": "#F2AE17",
       "icone": "🏰",
       "phrase_lieu": "Vous cherchez le palais idéal du facteur Cheval ? Vous êtes bientôt arrivé je vais vous donner la direction pour y aller. Rien de plus simple. En sortant de l'office de tourisme, montez la rue à gauche sur 10m, puis prenez à droite la rue du palai idéal sur 50m, et vous serez arrivé. Je vous souhaite une bonne visite n'hésitez pas à revenir me voir après."
     },
     "galabryom": {
       "titre": "Le Monde de Galabryôm",
-      "ville": "",
-      "photo": "images/galabryom.jpg",
+      "commune": "Hauterives",
+      "photo": "images/sites/galabryom.jpg",
+      "couleur": "#55A84E",
       "icone": "🌿",
       "phrase_lieu": "À compléter dans GitHub."
     },
     "tombeau": {
       "titre": "Tombeau du Facteur Cheval",
-      "ville": "Hauterives",
-      "photo": "images/tombeau.jpg",
+      "commune": "Hauterives",
+      "photo": "images/sites/tombeau.jpg",
+      "couleur": "#A85838",
       "icone": "🧭",
       "phrase_lieu": "Pour aller au tombeau du Facteur Cheval il faut compter environ 5 minute en voiture, ou 15 minute à pied. Je sens que vous êtes courageux n'ess pas ? Remontez tout en haut de la rue puis tournez à gauche dans la rue principale. Longez la route jusqu'au rond point en face de l'église. Prenez tout droit en direction de Saint Vallier. Puis prenez ensuite le petit chemin balisé sur votre gauche. Encore un petit effort, et vous serez bientôt arrivé. bonne visite."
     },
     "ferme": {
       "titre": "Ferme du Facteur Enchantée",
-      "ville": "",
-      "photo": "images/ferme.jpg",
+      "commune": "Hauterives",
+      "photo": "images/sites/ferme.jpg",
+      "couleur": "#F3A21B",
       "icone": "🐐",
       "phrase_lieu": "À compléter dans GitHub."
     },
     "ceramique": {
       "titre": "Maison de la Céramique",
-      "ville": "Saint-Uze",
-      "photo": "images/ceramique.jpg",
+      "commune": "Saint-Uze",
+      "photo": "images/sites/ceramique.jpg",
+      "couleur": "#7C42CC",
       "icone": "🏺",
       "phrase_lieu": "La Maison de la Céramique de Saint-Uze vous dévoile les richesses du patrimoine céramique de la Drôme des Collines. En voiture il faut compter environ 20 mn. Du parking du palais idéal reprendre en direction du sud et prendre la D51 suivre direction saint Vallier et continuer jusqu'à Saint-Uze."
     },
     "valrhona": {
       "titre": "Cité du Chocolat Valrhona",
-      "ville": "Tain-l'Hermitage",
-      "photo": "images/valrhona.jpg",
+      "commune": "Tain-l'Hermitage",
+      "photo": "images/sites/valrhona.jpg",
+      "couleur": "#ED2453",
       "icone": "🍫",
       "phrase_lieu": "Envie d'en savoir plus sur la fabrication du chocolat, rendez-vous à la cité du chocolat Valrhona à Tain l'ermitage, à environ 30 minute. Réservez vos billets à tarif réduit auprès de mes collègues."
     },
     "oasis": {
       "titre": "Parc Oasis Aventura",
-      "ville": "Hauterives",
-      "photo": "images/oasis.jpg",
+      "commune": "Hauterives",
+      "photo": "images/sites/oasis.jpg",
+      "couleur": "#16953B",
       "icone": "🌳",
       "phrase_lieu": "Pour vous rendre Parc oasis aventura, Je vous invite à reprendre votre véhicule. En voiture il faut compter environ 6 mn. Du parking du palai idéal suivre la rue Etienne Vassy sur 100m. Au stop prendre à droite la D51 Direction Roibon continuer tout droit pendant 4km puis tourner à droite direction Saint christophe et le laris. Monter sur 600m, puis tournez à gauche dans le virage, vous voilà arrivé et prêt à tenter l'aventure."
     }
@@ -57,14 +77,5 @@
     "Si votre mémoire est déjà partie en vacances, pas de panique !",
     "Je peux vous permettre de retrouver facilement l'itinéraire sur votre téléphone."
   ],
-  "phrase_tally_finale": "Renseignez votre adresse mail sur ma tablette, et je vous prépare le QR code.",
-  "interface": {
-    "titre": "Ketty vous guide !",
-    "instruction": "Touchez une carte",
-    "sous_instruction": "POUR EN SAVOIR PLUS",
-    "bulle": "Explorez nos pépites locales !",
-    "message_modal": "Écoutez Ketty, puis continuez pour récupérer votre itinéraire.",
-    "bouton_reecouter": "🔊 Réécouter Ketty",
-    "bouton_continuer": "C'est parti ! →"
-  }
+  "phrase_tally_finale": "Renseignez votre adresse mail sur ma tablette, et je vous prépare le QR code."
 }

@@ -1,14 +1,7 @@
-let CFG={},current=null,voiceSettings={rate:1,pitch:1};const $=s=>document.querySelector(s);
-function speak(t,done){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='fr-FR';u.rate=voiceSettings.rate;u.pitch=voiceSettings.pitch;if(done)u.onend=done;speechSynthesis.speak(u)}
-async function init(){CFG=await fetch('config.json?v='+Date.now()).then(r=>r.json());
-const ui=CFG.interface||{};
-$('#uiTitle').textContent=ui.titre||'Ketty vous guide !';
-$('#uiInstruction').textContent=ui.instruction||'Touchez une carte';
-$('#uiSubInstruction').textContent=ui.sous_instruction||'POUR EN SAVOIR PLUS';
-$('#uiBubble').textContent=ui.bulle||'Explorez nos pépites locales !';
-$('#uiModalMessage').textContent=ui.message_modal||'Écoutez Ketty, puis continuez pour récupérer votre itinéraire.';
-$('#replay').textContent=ui.bouton_reecouter||'🔊 Réécouter Ketty';
-$('#go').textContent=ui.bouton_continuer||"C'est parti ! →";
-const cards=$('#cards');Object.entries(CFG.lieux).forEach(([id,x])=>{let c=document.createElement('article');c.className='card';c.dataset.id=id;c.innerHTML=`<div class="photo missing" style="background-image:url('${x.photo}')">${x.icone}</div><div class="info"><h3>${x.titre}</h3><p>${x.ville||''}</p><span class="arrow">›</span></div>`;let img=new Image();img.onload=()=>{c.querySelector('.photo').classList.remove('missing');c.querySelector('.photo').textContent=''};img.src=x.photo;c.onclick=()=>openPlace(id);cards.appendChild(c)})}
-function openPlace(id){current=id;let x=CFG.lieux[id];$('#modalIcon').textContent=x.icone;$('#modalTitle').textContent=x.titre;$('#modal').classList.remove('hidden');speak(x.phrase_lieu)}
-$('#close').onclick=()=>{$('#modal').classList.add('hidden');speechSynthesis.cancel()};$('#replay').onclick=()=>speak(CFG.lieux[current].phrase_lieu);$('#go').onclick=()=>{let a=CFG.phrases_tally_aleatoires[Math.floor(Math.random()*CFG.phrases_tally_aleatoires.length)]+' '+CFG.phrase_tally_finale;speak(a,()=>location.href=CFG.tally_url+'?lieu='+encodeURIComponent(current))};init().catch(e=>console.error(e));
+let CFG={},current=null;const $=s=>document.querySelector(s);
+function speak(t,end){speechSynthesis.cancel();if(!t)return;const u=new SpeechSynthesisUtterance(t);u.lang="fr-FR";u.rate=1;u.pitch=1;if(end)u.onend=end;speechSynthesis.speak(u)}
+function applyUI(){const u=CFG.interface||{};$("#app").style.backgroundImage=`url("${u.background}")`;$("#ketty").src=u.ketty_image;$("#title").textContent=u.titre;$("#instruction").textContent=u.instruction;$("#sub").textContent=u.sous_instruction;$("#tagline").textContent=u.accroche;$("#bubble").textContent=u.bulle_ketty;$("#footerText").textContent=u.footer;$("#mmessage").textContent=u.message_modal;$("#replay").textContent=u.bouton_reecouter;$("#go").textContent=u.bouton_continuer}
+function build(){const box=$("#cards");box.innerHTML="";Object.entries(CFG.lieux).forEach(([id,s])=>{const a=document.createElement("article");a.className="card";a.style.setProperty("--c",s.couleur||"#f2ae17");a.innerHTML=`<img class="photo" src="${s.photo}" alt="${s.titre}"><div class="info"><div class="icon">${s.icone||"📍"}</div><div><div class="ctitle">${s.titre}</div><div class="city">${s.commune||""}</div></div><div class="arrow">›</div></div>`;a.onclick=()=>openSite(id);box.appendChild(a)})}
+function openSite(id){current=id;const s=CFG.lieux[id];$("#micon").textContent=s.icone||"📍";$("#mtitle").textContent=s.titre;$("#modal").classList.remove("hidden");speak(s.phrase_lieu)}
+$("#close").onclick=()=>{$("#modal").classList.add("hidden");speechSynthesis.cancel()};$("#replay").onclick=()=>current&&speak(CFG.lieux[current].phrase_lieu);$("#go").onclick=()=>{if(!current)return;const p=CFG.phrases_tally_aleatoires||[];const r=(p.length?p[Math.floor(Math.random()*p.length)]+" ":"")+(CFG.phrase_tally_finale||"");const url=`${CFG.tally_url}?lieu=${encodeURIComponent(current)}`;let done=false;const go=()=>{if(done)return;done=true;location.href=url};speak(r,go);setTimeout(go,Math.max(5000,r.length*70))};
+fetch("config.json?v="+Date.now()).then(r=>r.json()).then(c=>{CFG=c;applyUI();build()}).catch(e=>{console.error(e);alert("Impossible de charger config.json")});
