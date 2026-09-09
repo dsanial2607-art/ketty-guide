@@ -15,20 +15,19 @@ function applyUI(){
   const u=CFG.interface||{};
   $("#app").style.backgroundImage=`url("${u.background}")`;
   $("#ketty").src=u.ketty_image;
-  $("#title").textContent=u.titre;
-  $("#instruction").textContent=u.instruction;
-  $("#sub").textContent=u.sous_instruction;
-  $("#tagline").textContent=u.accroche;
-  $("#bubble").textContent=u.bulle_ketty;
-  $("#footerText").textContent=u.footer;
-  $("#mmessage").textContent=u.message_modal;
-  $("#replay").textContent=u.bouton_reecouter;
-  $("#go").textContent=u.bouton_continuer;
+  $("#title").textContent=u.titre||"";
+  $("#instruction").textContent=u.instruction||"";
+  $("#sub").textContent=u.sous_instruction||"";
+  $("#tagline").textContent=u.accroche||"";
+  $("#bubble").textContent=u.bulle_ketty||"";
+  $("#brandName").textContent=u.nom_destination||"";
+  $("#brandSignature").textContent=u.signature_destination||"";
+  $("#footerText").textContent=u.footer||"";
+  $("#mmessage").textContent=u.message_modal||"";
+  $("#replay").textContent=u.bouton_reecouter||"";
+  $("#go").textContent=u.bouton_continuer||"";
 }
 
-/* Mélange aléatoire Fisher-Yates :
-   l'ordre change à chaque chargement de page,
-   sans modifier les données de config.json. */
 function shuffle(array){
   const a=[...array];
   for(let i=a.length-1;i>0;i--){
@@ -41,8 +40,7 @@ function shuffle(array){
 function build(){
   const box=$("#cards");
   box.innerHTML="";
-
-  const sitesMelanges=shuffle(Object.entries(CFG.lieux));
+  const sitesMelanges=shuffle(Object.entries(CFG.lieux||{}));
 
   sitesMelanges.forEach(([id,s])=>{
     const a=document.createElement("article");
@@ -93,8 +91,6 @@ $("#go").onclick=()=>{
   };
 
   speak(r,go);
-
-  // Sécurité pour les WebView Android où onend peut parfois ne pas se déclencher.
   setTimeout(go,Math.max(5000,r.length*70));
 };
 
