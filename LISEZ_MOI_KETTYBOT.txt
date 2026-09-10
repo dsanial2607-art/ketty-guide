@@ -1,0 +1,16 @@
+KETTY GUIDE — VERSION COMPATIBLE KETTYBOT
+
+Corrections :
+- JavaScript réécrit sans syntaxe moderne (ES5).
+- fetch() remplacé par XMLHttpRequest.
+- images locales réintégrées dans le ZIP.
+- galabryom.png corrigé en galabryom.jpg.
+- formulaire Tally anglais configuré.
+- navigation Tally ne dépend plus de la fin de speechSynthesis.
+- triple appui rapide en haut à droite pour ouvrir l'admin voix.
+- ?admin=1 reste disponible.
+
+IMPORTANT :
+La voix speechSynthesis du KettyBot peut rester muette. Le guide reste néanmoins
+entièrement fonctionnel. Pour une voix fiable, il faudra intégrer des MP3
+préenregistrés, comme pour Sauve Ketty.

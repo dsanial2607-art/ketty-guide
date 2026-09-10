@@ -17,7 +17,7 @@ header{
 .title-zone{align-self:start;padding:4px 0 0 8px}
 .main-title{
   font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(34px,3.55vw,66px);
+  
   line-height:.95;font-weight:700;letter-spacing:-.03em;color:var(--ink)
 }
 .title-line{
@@ -30,8 +30,8 @@ header{
   box-shadow:0 8px 24px rgba(24,55,48,.14)
 }
 .finger{font-size:42px}
-.touch-title{font-size:clamp(27px,2.65vw,49px);font-weight:800;line-height:1;white-space:nowrap}
-.touch-sub{text-align:center;margin-top:7px;font-size:clamp(10px,.9vw,16px);letter-spacing:.26em;font-weight:700}
+.touch-title{font-weight:800;line-height:1;white-space:nowrap}
+.touch-sub{text-align:center;margin-top:7px;letter-spacing:.26em;font-weight:700}
 .logo-zone{display:flex;justify-content:flex-end;align-items:flex-start;height:100%;padding-top:2px}
 .office-logo{display:block;max-width:90%;max-height:95px;object-fit:contain;object-position:right top}
 
@@ -44,7 +44,7 @@ aside{position:relative;min-width:0;min-height:0;display:flex;align-items:flex-e
 .bubble{
   position:absolute;right:-4px;bottom:9%;width:168px;min-height:120px;border-radius:48% 52% 48% 52%;
   background:#fff;display:grid;place-items:center;padding:18px;text-align:center;
-  font-family:Georgia,"Times New Roman",serif;font-size:clamp(16px,1.25vw,23px);
+  font-family:Georgia,"Times New Roman",serif;
   line-height:1.12;font-style:italic;font-weight:700;color:var(--ink);
   box-shadow:0 8px 22px rgba(24,55,48,.14)
 }
@@ -70,8 +70,8 @@ aside{position:relative;min-width:0;min-height:0;display:flex;align-items:flex-e
   font-size:22px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)
 }
 .copy{min-width:0}
-.ctitle{font-size:clamp(14px,1.08vw,21px);font-weight:800;line-height:1.03;color:#153747}
-.city{margin-top:4px;font-size:clamp(9px,.66vw,12px);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#315567}
+.ctitle{font-weight:800;line-height:1.03;color:#153747}
+.city{margin-top:4px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#315567}
 .arrow{
   width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
   background:var(--c);color:white;font-size:28px;font-weight:700
@@ -85,9 +85,9 @@ footer{
   background:var(--footer);color:white;display:flex;align-items:center;justify-content:space-between;
   padding:8px 38px;box-shadow:0 -3px 14px rgba(0,0,0,.08)
 }
-.brand{display:flex;flex-direction:column;gap:4px;font-size:clamp(13px,1.05vw,20px);font-weight:700;letter-spacing:.12em}
+.brand{display:flex;flex-direction:column;gap:4px;font-weight:700;letter-spacing:.12em}
 .brand small{font-size:.62em;font-weight:400;letter-spacing:.16em}
-.footer-text{font-size:clamp(11px,.92vw,16px);font-weight:500;letter-spacing:.20em;text-transform:uppercase}
+.footer-text{font-weight:500;letter-spacing:.20em;text-transform:uppercase}
 
 .modal{position:fixed;inset:0;background:rgba(8,23,44,.68);display:grid;place-items:center;z-index:20}
 .hidden{display:none}
@@ -150,3 +150,13 @@ footer{
 .voice-lang-section{padding:8px 0 18px;border-bottom:1px solid #d9e0e8}
 .voice-lang-section:last-of-type{border-bottom:0}
 .voice-lang-section h3{margin:8px 0 12px;font-size:21px}
+
+/* KettyBot old-WebView fallbacks */
+.main-title{font-size:48px}
+.touch-title{font-size:34px}
+.touch-sub{font-size:13px}
+.bubble{font-size:18px}
+.ctitle{font-size:17px}
+.city{font-size:10px}
+.brand{font-size:16px}
+.footer-text{font-size:13px}

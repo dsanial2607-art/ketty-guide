@@ -38,10 +38,10 @@
     }
   },
   "tally_url": {
-  "fr": "https://tally.so/r/1Ae6lW",
-  "en": "https://tally.so/r/A7gRpl"
-},
-"lieux": {
+    "fr": "https://tally.so/r/1Ae6lW",
+    "en": "https://tally.so/r/A7gRpl"
+  },
+  "lieux": {
     "palais": {
       "titre": "Palais idéal du Facteur Cheval",
       "commune": "Hauterives",
@@ -56,7 +56,7 @@
     "galabryom": {
       "titre": "Le Monde de Galabryôm",
       "commune": "Hauterives",
-      "photo": "images/sites/galabryom.png",
+      "photo": "images/sites/galabryom.jpg",
       "couleur": "#6DA55B",
       "icone": "🌿",
       "phrase_lieu": {
