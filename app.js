@@ -417,3 +417,20 @@ initVoiceSettings();
 loadConfig();
 
 try{preloadKettyAudio();}catch(e){}
+
+document.addEventListener("DOMContentLoaded",function(){
+  try{
+    var ov=document.getElementById("langOverlay"); if(ov)ov.style.display="none";
+    chooseLanguage("fr",false);
+  }catch(e){}
+});
+var kettyIdleTimer=null;
+function resetKettyIdle(){
+  if(kettyIdleTimer)clearTimeout(kettyIdleTimer);
+  kettyIdleTimer=setTimeout(function(){
+    try{stopKettyAudio();chooseLanguage("fr",false);closeModal();window.scrollTo(0,0);}catch(e){}
+  },120000);
+}
+document.addEventListener("click",resetKettyIdle,true);
+document.addEventListener("touchstart",resetKettyIdle,true);
+resetKettyIdle();
