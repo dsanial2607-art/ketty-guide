@@ -1,0 +1,14 @@
+KETTY GUIDE — PHOTOS RÉINTÉGRÉES
+
+Les 7 cartes utilisent maintenant de vraies photos :
+- Palais idéal du Facteur Cheval
+- Le Monde de Galabryôm
+- Cité du Chocolat Valrhona
+- Maison de la Céramique
+- Parc Oasis Aventura
+- Ferme du Facteur Enchantée
+- Tombeau du Facteur Cheval
+
+Les photos ont été récupérées depuis la maquette fonctionnelle précédemment utilisée,
+puis recadrées au format 1000 x 620 pour les cartes.
+Toutes les voix MP3 FR/EN, le volume à 30 % et le menu admin caché sont conservés.

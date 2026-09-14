@@ -202,9 +202,6 @@ function applyUI(){
 function shuffledKeys(obj){
   var a=[], k;
   for(k in obj) if(Object.prototype.hasOwnProperty.call(obj,k)) a.push(k);
-  for(var i=a.length-1;i>0;i--){
-    var j=Math.floor(Math.random()*(i+1)), tmp=a[i]; a[i]=a[j]; a[j]=tmp;
-  }
   return a;
 }
 
@@ -276,16 +273,34 @@ function replay(){
 
 function continueRoute(){
   if(!current) return;
+
   var arr=(CFG.phrases_tally_aleatoires&&CFG.phrases_tally_aleatoires[currentLang])||[];
-  var r=(arr.length?arr[Math.floor(Math.random()*arr.length)]+" ":"")+((CFG.phrase_tally_finale&&CFG.phrase_tally_finale[currentLang])||"");
+  var randomText=arr.length?arr[Math.floor(Math.random()*arr.length)]:"";
+  var finalText=(CFG.phrase_tally_finale&&CFG.phrase_tally_finale[currentLang])||"";
+
   var t=CFG.tally_url||{};
   var base=t[currentLang];
   if(!base || base.indexOf("URL_")===0){
     alert(currentLang==="fr"?"Le formulaire Tally n'est pas encore configuré.":"The English Tally form is not configured yet.");
     return;
   }
+
   var url=base+"?lieu="+encodeURIComponent(current)+"&langue="+encodeURIComponent(currentLang);
-  speak(r,currentLang,function(){window.location.href=url;});
+
+  function openTally(){
+    window.location.href=url;
+  }
+
+  if(randomText){
+    speak(randomText,currentLang,function(){
+      if(finalText) speak(finalText,currentLang,openTally);
+      else openTally();
+    });
+  }else if(finalText){
+    speak(finalText,currentLang,openTally);
+  }else{
+    openTally();
+  }
 }
 
 function getQueryParam(name){
@@ -350,6 +365,24 @@ function initVoiceSettings(){
   },false);
 }
 
+
+function preloadKettyAudio(){
+  var files=[
+    "voices/fr/fr_intro.mp3",
+    "voices/fr/fr_language.mp3",
+    "voices/en/en_intro.mp3",
+    "voices/en/en_language.mp3"
+  ];
+  for(var i=0;i<files.length;i++){
+    try{
+      var a=new Audio();
+      a.preload="auto";
+      a.src=files[i];
+      a.load();
+    }catch(e){}
+  }
+}
+
 function bindUI(){
   if(byId("close"))byId("close").onclick=closeModal;
   if(byId("replay"))byId("replay").onclick=replay;
@@ -382,3 +415,5 @@ function loadConfig(){
 bindUI();
 initVoiceSettings();
 loadConfig();
+
+try{preloadKettyAudio();}catch(e){}

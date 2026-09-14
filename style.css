@@ -182,3 +182,13 @@ footer{
   color:#61706a;
   text-align:left;
 }
+
+/* Menu admin simplifié pour la version MP3 */
+.voice-settings-modal .voice-grid,
+.voice-settings-modal .voice-column select,
+.voice-settings-modal .voice-column .slider-row,
+.voice-settings-modal label[for^="voiceSelect"],
+.voice-settings-modal label[for^="rateRange"],
+.voice-settings-modal label[for^="pitchRange"]{
+  display:none !important;
+}

@@ -1,0 +1,12 @@
+KETTY GUIDE — VERSION OPTIMISÉE KETTYBOT
+
+Améliorations :
+- ordre des 7 cartes désormais fixe ;
+- séquence audio Tally corrigée :
+  phrase aléatoire -> phrase finale -> ouverture du formulaire ;
+- menu admin simplifié pour l'usage MP3 :
+  volume de Ketty + test FR + test EN ;
+- préchargement des MP3 d'introduction et de changement de langue ;
+- volume par défaut conservé à 30 % ;
+- accès admin caché par 3 appuis rapides en haut à droite conservé ;
+- voix MP3 FR/EN et vraies photos conservées.
