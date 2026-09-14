@@ -274,3 +274,75 @@ footer{
   gap: 14px !important;
   z-index: 15 !important;
 }
+
+
+/* ===== Correctif bandeau inférieur =====
+   Annule le positionnement appliqué par erreur à .brand :
+   dans le footer, .brand correspond à PORTE DE DRÔMARDÈCHE. */
+footer .brand{
+  position:static !important;
+  left:auto !important;
+  top:auto !important;
+  right:auto !important;
+  width:auto !important;
+  max-width:none !important;
+  max-height:none !important;
+  z-index:auto !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  gap:3px !important;
+  flex:0 0 auto !important;
+  line-height:1.05 !important;
+}
+
+footer{
+  height:9% !important;
+  min-height:74px !important;
+  padding:8px 34px !important;
+  box-sizing:border-box !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:30px !important;
+  overflow:hidden !important;
+}
+
+footer .brand #brandName{
+  display:block !important;
+  font-size:16px !important;
+  line-height:1.1 !important;
+  white-space:nowrap !important;
+}
+
+footer .brand #brandSignature{
+  display:block !important;
+  font-size:10px !important;
+  line-height:1.1 !important;
+  white-space:nowrap !important;
+}
+
+footer .footer-text{
+  position:static !important;
+  margin-left:auto !important;
+  font-size:13px !important;
+  line-height:1.2 !important;
+  letter-spacing:.18em !important;
+  white-space:nowrap !important;
+  text-align:right !important;
+  flex:0 1 auto !important;
+}
+
+/* Le logo de destination reste bien au-dessus de Ketty */
+#officeLogo,
+.office-logo{
+  position:fixed !important;
+  left:46px !important;
+  top:105px !important;
+  right:auto !important;
+  width:310px !important;
+  max-width:310px !important;
+  height:auto !important;
+  object-fit:contain !important;
+  z-index:12 !important;
+}
