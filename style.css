@@ -237,21 +237,27 @@ footer{
   border-color:#15584f !important;
   box-shadow:0 0 0 4px rgba(21,88,79,.18),0 5px 12px rgba(0,0,0,.14) !important;
 }
-/* Logo "ICI JE RÊVE" au-dessus de Ketty */
-.brand {
+
+
+/* ===== Position finale du logo ICI JE RÊVE =====
+   Logo placé dans la colonne gauche, au-dessus de Ketty.
+   Les !important garantissent que ce bloc prend le dessus sur
+   les anciennes règles de positionnement. */
+.brand,
+.logo-wrap,
+.site-logo {
   position: absolute !important;
-  left: 35px !important;
-  top: 20px !important;
+  left: 38px !important;
+  top: 24px !important;
   right: auto !important;
-  width: 300px !important;
-  max-width: 300px !important;
-  z-index: 5 !important;
+  width: 310px !important;
+  max-width: 310px !important;
+  z-index: 8 !important;
 }
 
-/* On garde Ketty en dessous */
+/* Laisse la zone du robot sous le logo sans modifier les cartes. */
 .ketty-area,
-.ketty-wrap {
-  position: absolute;
-  left: 20px;
-  top: 180px;
+.ketty-wrap,
+.robot-zone {
+  z-index: 3 !important;
 }
