@@ -239,25 +239,38 @@ footer{
 }
 
 
-/* ===== Position finale du logo ICI JE RÊVE =====
-   Logo placé dans la colonne gauche, au-dessus de Ketty.
-   Les !important garantissent que ce bloc prend le dessus sur
-   les anciennes règles de positionnement. */
-.brand,
-.logo-wrap,
-.site-logo {
-  position: absolute !important;
-  left: 38px !important;
-  top: 24px !important;
+/* ===== Correctif réel : logo ICI JE RÊVE au-dessus de Ketty ===== */
+#officeLogo,
+.office-logo {
+  position: fixed !important;
+  left: 46px !important;
+  top: 105px !important;
   right: auto !important;
   width: 310px !important;
+  height: auto !important;
   max-width: 310px !important;
-  z-index: 8 !important;
+  max-height: 115px !important;
+  object-fit: contain !important;
+  object-position: left top !important;
+  z-index: 12 !important;
 }
 
-/* Laisse la zone du robot sous le logo sans modifier les cartes. */
-.ketty-area,
-.ketty-wrap,
-.robot-zone {
-  z-index: 3 !important;
+/* La zone de droite ne garde que les drapeaux */
+.logo-zone {
+  position: relative !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  padding-top: 2px !important;
+}
+
+/* Drapeaux bien visibles en haut à droite */
+#languageSwitch {
+  position: relative !important;
+  right: auto !important;
+  top: auto !important;
+  margin: 0 !important;
+  display: flex !important;
+  gap: 14px !important;
+  z-index: 15 !important;
 }
