@@ -1,0 +1,14 @@
+KETTY GUIDE — VERSION MP3 FR/EN
+
+- 14 MP3 français + 14 MP3 anglais intégrés.
+- speechSynthesis n'est plus utilisé pour les phrases du guide.
+- volume MP3 par défaut : 30 %.
+- réglage du volume via le menu admin caché.
+- 3 appuis rapides dans le coin supérieur droit ouvrent le menu.
+- choix FR/EN : phrase de langue, puis introduction de Ketty.
+- les 7 destinations et les phrases Tally utilisent les MP3.
+- le fichier anglais supplémentaire tts_audio_31(1).mp3 n'a pas été utilisé.
+
+Arborescence :
+voices/fr/fr_intro.mp3 ... fr_tally_final.mp3
+voices/en/en_intro.mp3 ... en_tally_final.mp3

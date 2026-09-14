@@ -1,0 +1,15 @@
+KETTY GUIDE — VOLUME + MENU ADMIN CACHÉ
+
+Modifications :
+- volume de Ketty réglé à 30 % par défaut ;
+- curseur Volume de Ketty de 0 à 100 % ;
+- réglage mémorisé sur la tablette avec localStorage ;
+- volume commun aux voix FR et EN ;
+- 3 appuis rapides dans le coin supérieur droit ouvrent le menu admin ;
+- ?admin=1 reste disponible comme accès de secours ;
+- le bouton ⚙ reste caché en utilisation normale.
+
+À noter :
+Ketty Guide utilise encore speechSynthesis. Le curseur agit donc sur
+SpeechSynthesisUtterance.volume. Si le moteur vocal de la tablette reste muet,
+il faudra passer les phrases en MP3 comme pour Sauve Ketty.

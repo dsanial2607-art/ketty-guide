@@ -14,9 +14,11 @@ var VOICE_STORAGE_KEY = "kettyVoiceSettingsBilingual";
 function getVoiceSettings(){
   try {
     var x = JSON.parse(localStorage.getItem(VOICE_STORAGE_KEY));
-    return x || {fr:{},en:{}};
+    if(!x) x={fr:{},en:{},volume:30};
+    if(typeof x.volume!=="number") x.volume=30;
+    return x;
   } catch(e) {
-    return {fr:{},en:{}};
+    return {fr:{},en:{},volume:30};
   }
 }
 
@@ -34,6 +36,8 @@ function saveVoiceSettings(){
       pitch: pitch ? parseFloat(pitch.value || "1") : 1
     };
   }
+  var volumeRange=byId("voiceVolumeRange");
+  data.volume=volumeRange ? parseInt(volumeRange.value || "30",10) : (typeof data.volume==="number"?data.volume:30);
   try { localStorage.setItem(VOICE_STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
 }
 
@@ -85,6 +89,9 @@ function loadVoices(){
 
 function applySavedVoiceSettings(){
   var data=getVoiceSettings(), langs=["fr","en"];
+  var volume=typeof data.volume==="number"?data.volume:30;
+  if(byId("voiceVolumeRange")) byId("voiceVolumeRange").value=volume;
+  if(byId("voiceVolumeValue")) byId("voiceVolumeValue").innerHTML=volume;
   for(var i=0;i<langs.length;i++){
     var lang=langs[i], L=lang==="fr"?"Fr":"En", s=data[lang]||{};
     var r=typeof s.rate==="number"?s.rate:1;
@@ -96,36 +103,61 @@ function applySavedVoiceSettings(){
   }
 }
 
-/* Voice is optional: the guide must remain usable even if KettyBot's WebView
-   exposes speechSynthesis but produces no sound. */
-function speak(text, lang, end){
-  var finished=false;
-  function done(){
-    if(finished) return;
-    finished=true;
-    if(end) end();
-  }
-  if(!text){ done(); return; }
+var kettyAudio = new Audio();
+kettyAudio.preload = "auto";
+var currentAudioKey = null;
+
+function getKettyVolume(){
+  var s=getVoiceSettings();
+  return Math.max(0,Math.min(1,(typeof s.volume==="number"?s.volume:30)/100));
+}
+function audioPath(lang,key){
+  return "voices/"+lang+"/"+lang+"_"+key+".mp3";
+}
+function stopKettyAudio(){
+  try{kettyAudio.pause();kettyAudio.currentTime=0;}catch(e){}
+}
+function playKettyMp3(lang,key,end){
+  stopKettyAudio();
+  currentAudioKey=key;
+  kettyAudio.src=audioPath(lang,key);
+  kettyAudio.volume=getKettyVolume();
+  kettyAudio.onended=function(){if(end)end();};
+  kettyAudio.onerror=function(){if(end)end();};
   try{
-    if(window.speechSynthesis && window.SpeechSynthesisUtterance){
-      window.speechSynthesis.cancel();
-      var u=new SpeechSynthesisUtterance(text);
-      var s=getVoiceSettings()[lang]||{};
-      u.lang=lang==="fr"?"fr-FR":"en-GB";
-      u.rate=typeof s.rate==="number"?s.rate:1;
-      u.pitch=typeof s.pitch==="number"?s.pitch:1;
-      for(var i=0;i<availableVoices.length;i++){
-        if(availableVoices[i].name===s.voiceName){u.voice=availableVoices[i];break;}
+    var p=kettyAudio.play();
+    if(p && typeof p.catch==="function") p.catch(function(){if(end)end();});
+  }catch(e){if(end)end();}
+}
+function resolveAudioKey(text,lang){
+  if(!text)return null;
+  var u=CFG.interface && CFG.interface.textes && CFG.interface.textes[lang];
+  if(u && text===u.annonce_langue)return "language";
+  var lieux=CFG.lieux||{}, k, s;
+  for(k in lieux){
+    if(Object.prototype.hasOwnProperty.call(lieux,k)){
+      s=lieux[k];
+      if(s.phrase_lieu && s.phrase_lieu[lang]===text){
+        if(k==="chocolat")return "valrhona";
+        return k;
       }
-      u.onend=done;
-      u.onerror=done;
-      window.speechSynthesis.speak(u);
-      /* Never block navigation on a missing/broken WebView voice. */
-      if(end) setTimeout(done, 1800);
-      return;
     }
-  }catch(e){}
-  done();
+  }
+  var arr=(CFG.phrases_tally_aleatoires&&CFG.phrases_tally_aleatoires[lang])||[];
+  for(var i=0;i<arr.length;i++){
+    if(text.indexOf(arr[i])===0)return "tally_0"+(i+1);
+  }
+  var fin=(CFG.phrase_tally_finale&&CFG.phrase_tally_finale[lang])||"";
+  if(text===fin)return "tally_final";
+  return null;
+}
+function speak(text,lang,end){
+  var key=resolveAudioKey(text,lang);
+  if(key){playKettyMp3(lang,key,end);return;}
+  if(end)end();
+}
+function playIntro(){
+  playKettyMp3(currentLang,"intro");
 }
 
 function setCssVar(n,v){
@@ -224,10 +256,14 @@ function chooseLanguage(lang,announce){
   try{sessionStorage.setItem("kettyLang",lang);}catch(e){}
   applyUI(); build();
   byId("languageSplash").className="language-splash hidden";
-  if(announce) speak(ui().annonce_langue||"",currentLang);
+  if(announce){
+    var announcement=ui().annonce_langue||"";
+    speak(announcement,currentLang,function(){playIntro();});
+  }
 }
 
 function closeModal(){
+  stopKettyAudio();
   byId("modal").className="modal hidden";
   try{if(window.speechSynthesis)window.speechSynthesis.cancel();}catch(e){}
 }
@@ -275,6 +311,16 @@ function initVoiceSettings(){
   if(btn) btn.onclick=function(){byId("voiceSettingsModal").className="voice-settings-modal";loadVoices();applySavedVoiceSettings();};
   if(byId("closeVoiceSettings")) byId("closeVoiceSettings").onclick=function(){saveVoiceSettings();byId("voiceSettingsModal").className="voice-settings-modal hidden";};
 
+  var volumeRange=byId("voiceVolumeRange");
+  if(volumeRange){
+    volumeRange.oninput=function(){
+      if(byId("voiceVolumeValue")) byId("voiceVolumeValue").innerHTML=volumeRange.value;
+      saveVoiceSettings();
+      try{kettyAudio.volume=getKettyVolume();}catch(e){}
+    };
+    volumeRange.onchange=saveVoiceSettings;
+  }
+
   var langs=["fr","en"];
   for(var i=0;i<langs.length;i++){
     (function(lang){
@@ -283,7 +329,7 @@ function initVoiceSettings(){
       if(sel)sel.onchange=saveVoiceSettings;
       if(rr)rr.oninput=function(){byId("rateValue"+L).innerHTML=Number(rr.value).toFixed(2);saveVoiceSettings();};
       if(pr)pr.oninput=function(){byId("pitchValue"+L).innerHTML=Number(pr.value).toFixed(2);saveVoiceSettings();};
-      if(tv)tv.onclick=function(){saveVoiceSettings();speak(lang==="fr"?"Bonjour, je suis Ketty. Test de la voix française.":"Hello, I'm Ketty. This is my English voice.",lang);};
+      if(tv)tv.onclick=function(){saveVoiceSettings();playKettyMp3(lang,"intro");};
     })(langs[i]);
   }
 
