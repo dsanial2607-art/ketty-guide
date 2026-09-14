@@ -201,3 +201,39 @@ footer{
 .flag-gb{background:linear-gradient(33deg,transparent 43%,#fff 43% 48%,#c8102e 48% 52%,#fff 52% 57%,transparent 57%),linear-gradient(-33deg,transparent 43%,#fff 43% 48%,#c8102e 48% 52%,#fff 52% 57%,transparent 57%),linear-gradient(90deg,transparent 39%,#fff 39% 44%,#c8102e 44% 56%,#fff 56% 61%,transparent 61%),linear-gradient(0deg,transparent 36%,#fff 36% 42%,#c8102e 42% 58%,#fff 58% 64%,transparent 64%),#012169}
 .brand{position:absolute!important;left:35px!important;top:22px!important;right:auto!important;max-width:330px!important}
 .lang-switch{position:absolute!important;right:42px!important;top:25px!important;display:flex!important;gap:15px!important}
+
+/* Correctif drapeaux KettyBot : vraies images PNG */
+#languageSwitch{
+  display:flex !important;
+  align-items:center !important;
+  gap:14px !important;
+  margin:0 !important;
+}
+#languageSwitch button,
+#languageSwitch .flag-button{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:72px !important;
+  height:56px !important;
+  min-width:72px !important;
+  min-height:56px !important;
+  padding:5px !important;
+  margin:0 !important;
+  border-radius:14px !important;
+  border:3px solid #15584f !important;
+  background:#ffffff !important;
+  box-shadow:0 5px 12px rgba(0,0,0,.14) !important;
+  overflow:hidden !important;
+}
+#languageSwitch button img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  border-radius:9px !important;
+}
+#languageSwitch button.active{
+  border-color:#15584f !important;
+  box-shadow:0 0 0 4px rgba(21,88,79,.18),0 5px 12px rgba(0,0,0,.14) !important;
+}
