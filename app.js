@@ -422,13 +422,39 @@ document.addEventListener("DOMContentLoaded",function(){
   try{
     var ov=document.getElementById("langOverlay"); if(ov)ov.style.display="none";
     chooseLanguage("fr",false);
+    kettyIntroPending=true;
   }catch(e){}
 });
+
+var kettyIntroPending=true;
+
+/* Premier toucher = introduction de Ketty.
+   Un toucher sur un drapeau conserve la séquence annonce de langue + introduction. */
+document.addEventListener("click",function(e){
+  if(!kettyIntroPending) return;
+  var ls=document.getElementById("languageSwitch");
+  if(ls && ls.contains(e.target)){
+    kettyIntroPending=false;
+    return;
+  }
+  kettyIntroPending=false;
+  e.preventDefault();
+  e.stopPropagation();
+  if(e.stopImmediatePropagation)e.stopImmediatePropagation();
+  playIntro();
+},true);
+
 var kettyIdleTimer=null;
 function resetKettyIdle(){
   if(kettyIdleTimer)clearTimeout(kettyIdleTimer);
   kettyIdleTimer=setTimeout(function(){
-    try{stopKettyAudio();chooseLanguage("fr",false);closeModal();window.scrollTo(0,0);}catch(e){}
+    try{
+      stopKettyAudio();
+      chooseLanguage("fr",false);
+      closeModal();
+      window.scrollTo(0,0);
+      kettyIntroPending=true;
+    }catch(e){}
   },120000);
 }
 document.addEventListener("click",resetKettyIdle,true);
