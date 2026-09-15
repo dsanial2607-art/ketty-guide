@@ -422,27 +422,11 @@ document.addEventListener("DOMContentLoaded",function(){
   try{
     var ov=document.getElementById("langOverlay"); if(ov)ov.style.display="none";
     chooseLanguage("fr",false);
-    kettyIntroPending=true;
+    setTimeout(function(){
+      playKettyMp3("fr","intro");
+    },350);
   }catch(e){}
 });
-
-var kettyIntroPending=true;
-
-/* Premier toucher = introduction de Ketty.
-   Un toucher sur un drapeau conserve la séquence annonce de langue + introduction. */
-document.addEventListener("click",function(e){
-  if(!kettyIntroPending) return;
-  var ls=document.getElementById("languageSwitch");
-  if(ls && ls.contains(e.target)){
-    kettyIntroPending=false;
-    return;
-  }
-  kettyIntroPending=false;
-  e.preventDefault();
-  e.stopPropagation();
-  if(e.stopImmediatePropagation)e.stopImmediatePropagation();
-  playIntro();
-},true);
 
 var kettyIdleTimer=null;
 function resetKettyIdle(){
@@ -453,7 +437,6 @@ function resetKettyIdle(){
       chooseLanguage("fr",false);
       closeModal();
       window.scrollTo(0,0);
-      kettyIntroPending=true;
     }catch(e){}
   },120000);
 }

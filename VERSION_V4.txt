@@ -1,0 +1,7 @@
+KETTY GUIDE V4
+- Français par défaut.
+- Tentative d'autoplay de fr_intro.mp3 environ 350 ms après chargement.
+- Bouton anglais : "I speak English now!" puis introduction anglaise.
+- Bouton français : annonce française puis introduction française.
+- Toutes les autres corrections de V3 conservées.
+Attention : l'autoplay dépend de l'autorisation du WebView KettyBot.
