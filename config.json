@@ -17,7 +17,7 @@
         "nom_destination": "PORTE DE DRÔMARDÈCHE",
         "signature_destination": "OFFICE DE TOURISME",
         "footer": "PATRIMOINE • NATURE • SAVOIR-FAIRE • SAVEURS",
-        "message_modal": "Écoutez Ketty, puis continuez pour récupérer votre itinéraire.",
+        "message_modal": "Écoutez Ketty, puis touchez « C’est parti ! » pour recevoir votre itinéraire.",
         "bouton_reecouter": "🔊 Réécouter Ketty",
         "bouton_continuer": "C'est parti ! →",
         "annonce_langue": "Je parle français maintenant !"
@@ -30,7 +30,7 @@
         "nom_destination": "PORTE DE DRÔMARDÈCHE",
         "signature_destination": "TOURIST OFFICE",
         "footer": "HERITAGE • NATURE • CRAFTSMANSHIP • FLAVOURS",
-        "message_modal": "Listen to Ketty, then continue to get your route.",
+        "message_modal": "Listen to Ketty, then tap “Let’s go!” to get your directions.",
         "bouton_reecouter": "🔊 Listen again",
         "bouton_continuer": "Let's go! →",
         "annonce_langue": "I speak English now!"
