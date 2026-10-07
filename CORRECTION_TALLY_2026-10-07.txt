@@ -1,0 +1,8 @@
+CORRECTION TALLY – 07/10/2026
+
+- Conservation des formulaires Tally FR et EN existants.
+- Ouverture via un lien HTML réel, avec secours location.assign/location.href.
+- Ajout d’un délai de sécurité de 12 secondes si la WebView KettyBot ne renvoie pas la fin de lecture audio.
+- Mise à jour du paramètre de version de app.js pour éviter un ancien fichier en cache.
+
+Fichiers modifiés : app.js, index.html.

@@ -287,9 +287,37 @@ function continueRoute(){
 
   var url=base+"?lieu="+encodeURIComponent(current)+"&langue="+encodeURIComponent(currentLang);
 
+  var tallyOpened=false;
+  var tallySafetyTimer=null;
+
   function openTally(){
-    window.location.href=url;
+    if(tallyOpened) return;
+    tallyOpened=true;
+    if(tallySafetyTimer) clearTimeout(tallySafetyTimer);
+
+    // Navigation compatible navigateur classique + WebView Android/KettyBot.
+    // Le clic sur un lien réel est mieux pris en charge par certaines WebView
+    // qu'une simple affectation de window.location.href.
+    try{
+      var link=document.createElement("a");
+      link.href=url;
+      link.target="_self";
+      link.rel="noopener";
+      link.style.display="none";
+      document.body.appendChild(link);
+      link.click();
+      setTimeout(function(){
+        try{window.location.assign(url);}catch(e){window.location.href=url;}
+      },250);
+    }catch(e){
+      try{window.location.assign(url);}catch(e2){window.location.href=url;}
+    }
   }
+
+  // Sécurité KettyBot : certaines WebView ne renvoient pas toujours
+  // correctement l'événement de fin de lecture audio. Dans ce cas,
+  // on ouvre quand même Tally après 12 secondes.
+  tallySafetyTimer=setTimeout(openTally,12000);
 
   if(randomText){
     speak(randomText,currentLang,function(){
